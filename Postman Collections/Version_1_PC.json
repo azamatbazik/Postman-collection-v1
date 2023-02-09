@@ -39,7 +39,7 @@
 									}
 								}
 							],
-							"_postman_id": "32176a23-e5ea-4edd-bc6d-15bd9d31cf8d",
+							"id": "32176a23-e5ea-4edd-bc6d-15bd9d31cf8d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -97,7 +97,7 @@
 									}
 								}
 							],
-							"_postman_id": "61bfa20b-73ec-4552-88b2-f00e777518f8",
+							"id": "61bfa20b-73ec-4552-88b2-f00e777518f8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -157,7 +157,7 @@
 									}
 								}
 							],
-							"_postman_id": "2f6b2541-30d0-4b93-9fbc-5ac7eb739c31",
+							"id": "2f6b2541-30d0-4b93-9fbc-5ac7eb739c31",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -259,7 +259,7 @@
 									}
 								}
 							],
-							"_postman_id": "cac46d7b-eb2f-4053-9d3b-3905a3045644",
+							"id": "cac46d7b-eb2f-4053-9d3b-3905a3045644",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -288,8 +288,7 @@
 							"response": []
 						}
 					],
-					"_postman_id": "8f3ee47c-42f7-48e0-b6de-f6829cc59d59",
-					"_postman_isSubFolder": true
+					"id": "8f3ee47c-42f7-48e0-b6de-f6829cc59d59"
 				},
 				{
 					"name": "Продажи на сайте",
@@ -322,7 +321,7 @@
 									}
 								}
 							],
-							"_postman_id": "8d5461b8-9921-472a-8b02-6809b98aff23",
+							"id": "8d5461b8-9921-472a-8b02-6809b98aff23",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -374,7 +373,7 @@
 									}
 								}
 							],
-							"_postman_id": "a4957917-4c56-4eb7-953b-071d419fc67f",
+							"id": "a4957917-4c56-4eb7-953b-071d419fc67f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -431,7 +430,7 @@
 									}
 								}
 							],
-							"_postman_id": "1fdbcc2c-20db-4914-9a38-6ebfd58804d5",
+							"id": "1fdbcc2c-20db-4914-9a38-6ebfd58804d5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -456,8 +455,7 @@
 											"value": "[]",
 											"type": "text"
 										}
-									],
-									"options": {}
+									]
 								},
 								"url": {
 									"raw": "{{host}}/rest/cabinet/opr/sale/create?storeId={{StoreId}}",
@@ -517,7 +515,7 @@
 									}
 								}
 							],
-							"_postman_id": "e55abf19-d42b-4235-a0dc-550484511441",
+							"id": "e55abf19-d42b-4235-a0dc-550484511441",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -575,7 +573,7 @@
 									}
 								}
 							],
-							"_postman_id": "14e601c7-e8a1-4337-8a77-b9c7e889fcbb",
+							"id": "14e601c7-e8a1-4337-8a77-b9c7e889fcbb",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -600,8 +598,7 @@
 											"value": "[]",
 											"type": "text"
 										}
-									],
-									"options": {}
+									]
 								},
 								"url": {
 									"raw": "{{host}}/rest/cabinet/opr/sale/edit?storeId={{StoreId}}",
@@ -641,7 +638,7 @@
 									}
 								}
 							],
-							"_postman_id": "fdac997c-8427-482b-ae59-3959079fd5dc",
+							"id": "fdac997c-8427-482b-ae59-3959079fd5dc",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -706,7 +703,7 @@
 									}
 								}
 							],
-							"_postman_id": "d5896548-b4dc-4f99-9619-99842a2a7023",
+							"id": "d5896548-b4dc-4f99-9619-99842a2a7023",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -737,8 +734,7 @@
 							"response": []
 						}
 					],
-					"_postman_id": "8f3e133d-4640-4bf3-b15f-f86f04c00c3d",
-					"_postman_isSubFolder": true
+					"id": "8f3e133d-4640-4bf3-b15f-f86f04c00c3d"
 				},
 				{
 					"name": "Продажи на сайте с контрагентом",
@@ -772,7 +768,7 @@
 									}
 								}
 							],
-							"_postman_id": "23a2f41b-2bcd-4c49-a79a-b4d32207a0ea",
+							"id": "23a2f41b-2bcd-4c49-a79a-b4d32207a0ea",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -822,7 +818,7 @@
 									}
 								}
 							],
-							"_postman_id": "74f7e895-cbee-487c-b77a-4e71743f244e",
+							"id": "74f7e895-cbee-487c-b77a-4e71743f244e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -868,7 +864,7 @@
 									}
 								}
 							],
-							"_postman_id": "705e5ce3-06ed-477f-ad5c-aef582503853",
+							"id": "705e5ce3-06ed-477f-ad5c-aef582503853",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -941,7 +937,7 @@
 									}
 								}
 							],
-							"_postman_id": "ef522864-e7d6-405f-b1f8-87f125124adc",
+							"id": "ef522864-e7d6-405f-b1f8-87f125124adc",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -971,8 +967,7 @@
 											"value": "[]",
 											"type": "text"
 										}
-									],
-									"options": {}
+									]
 								},
 								"url": {
 									"raw": "{{host}}/rest/cabinet/opr/sale/create?storeId={{StoreId}}",
@@ -997,8 +992,7 @@
 							"response": []
 						}
 					],
-					"_postman_id": "63bc03c3-3c02-4e6a-9035-9b043da12e4c",
-					"_postman_isSubFolder": true
+					"id": "63bc03c3-3c02-4e6a-9035-9b043da12e4c"
 				},
 				{
 					"name": "Возвраты продажи на сайте",
@@ -1032,7 +1026,7 @@
 									}
 								}
 							],
-							"_postman_id": "9f264b42-8415-4580-aeff-d49413990f46",
+							"id": "9f264b42-8415-4580-aeff-d49413990f46",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1082,7 +1076,7 @@
 									}
 								}
 							],
-							"_postman_id": "8f5964e0-8dcc-40b3-a169-23e0efca3dde",
+							"id": "8f5964e0-8dcc-40b3-a169-23e0efca3dde",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1140,7 +1134,7 @@
 									}
 								}
 							],
-							"_postman_id": "63a20fa2-89f8-4dac-a71a-5fa65c90b4b8",
+							"id": "63a20fa2-89f8-4dac-a71a-5fa65c90b4b8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1204,7 +1198,7 @@
 									}
 								}
 							],
-							"_postman_id": "ea0cf463-9e8e-4310-8995-0824b10cbb6f",
+							"id": "ea0cf463-9e8e-4310-8995-0824b10cbb6f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1260,7 +1254,7 @@
 									}
 								}
 							],
-							"_postman_id": "80175c74-08cb-44cc-8aa2-5a59e879cd3f",
+							"id": "80175c74-08cb-44cc-8aa2-5a59e879cd3f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1315,7 +1309,7 @@
 									}
 								}
 							],
-							"_postman_id": "3c061121-61a4-438b-97ac-06c2286962ad",
+							"id": "3c061121-61a4-438b-97ac-06c2286962ad",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1346,8 +1340,7 @@
 							"response": []
 						}
 					],
-					"_postman_id": "1e6a8bda-23d5-4c84-a06d-29aa6bf9932d",
-					"_postman_isSubFolder": true
+					"id": "1e6a8bda-23d5-4c84-a06d-29aa6bf9932d"
 				},
 				{
 					"name": "Возвраты продажи на сайте c контрагентом",
@@ -1381,7 +1374,7 @@
 									}
 								}
 							],
-							"_postman_id": "c78f4095-5ad7-48d2-ba3e-6895d1b54215",
+							"id": "c78f4095-5ad7-48d2-ba3e-6895d1b54215",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1431,7 +1424,7 @@
 									}
 								}
 							],
-							"_postman_id": "7648f09d-e737-45a7-842a-97593d67a9d4",
+							"id": "7648f09d-e737-45a7-842a-97593d67a9d4",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1477,7 +1470,7 @@
 									}
 								}
 							],
-							"_postman_id": "fba989a2-6999-4177-94fe-16be11d8e489",
+							"id": "fba989a2-6999-4177-94fe-16be11d8e489",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1550,7 +1543,7 @@
 									}
 								}
 							],
-							"_postman_id": "c1a0f040-343f-42c1-8daf-d94c6d3c6c0a",
+							"id": "c1a0f040-343f-42c1-8daf-d94c6d3c6c0a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1580,8 +1573,7 @@
 											"value": "[]",
 											"type": "text"
 										}
-									],
-									"options": {}
+									]
 								},
 								"url": {
 									"raw": "{{host}}/rest/cabinet/opr/sale/create?storeId={{StoreId}}",
@@ -1634,7 +1626,7 @@
 									}
 								}
 							],
-							"_postman_id": "85684186-c2c2-4f2f-97ea-f2a066723ba8",
+							"id": "85684186-c2c2-4f2f-97ea-f2a066723ba8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1673,11 +1665,10 @@
 							"response": []
 						}
 					],
-					"_postman_id": "cd2e2428-8575-4f10-9609-7d561639d5ea",
-					"_postman_isSubFolder": true
+					"id": "cd2e2428-8575-4f10-9609-7d561639d5ea"
 				}
 			],
-			"_postman_id": "e9385065-1abd-411e-889d-adc4ae5a32f2"
+			"id": "e9385065-1abd-411e-889d-adc4ae5a32f2"
 		}
 	],
 	"event": [
@@ -1717,184 +1708,154 @@
 	],
 	"variable": [
 		{
-			"id": "808fb331-6e83-4a58-aa3a-f537abe26a4c",
+			"id": "0499f457-045c-480e-a8ca-c58c719ca3fe",
 			"key": "type",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "2d5a0230-ce2f-4520-86b0-94352fd1c5c0",
+			"id": "0d18d4d8-5423-4fc3-9805-439a12c841c9",
 			"key": "barcode",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "dccb58b2-bc09-4eb5-a0a8-dd1554493756",
+			"id": "fcd9ff9d-1ff6-457a-8fcf-ea784ccb0889",
 			"key": "posId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "170018d1-7b15-4a85-af8b-12a57ea682b2",
+			"id": "7d4cdfd8-cec3-4feb-a405-fe93df0581dd",
 			"key": "currentDate",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "8e261561-817e-41f3-9681-864620b289ea",
+			"id": "4f939573-89d7-4f72-a332-addc08dda502",
 			"key": "dateMonthAgo",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "ffa81216-7df1-4e8a-9111-80d7aab42b66",
+			"id": "a471aa8f-ccd1-4883-87c3-1e435fd52d21",
 			"key": "userId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "bf8b69d3-a328-4216-b4c9-4e8841b2d0c9",
+			"id": "b9835168-f945-4519-9285-24b5ef6005d5",
 			"key": "saleProductBarcode",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "7254627c-4043-41c5-9448-adb54031106f",
+			"id": "949914e2-4130-491e-82fd-1d23c7acdacf",
 			"key": "sellingPriceSaleProduct",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "3e1fefef-116d-464d-b406-ad3e51e504d4",
+			"id": "bc1216b4-470a-4d89-8e2f-3e9e8a96bf8c",
 			"key": "quantitySaleProduct",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "f5bc1960-d848-4f86-b3aa-2abcaa8eb316",
+			"id": "aa20e91b-72a6-4300-93bc-5e5944998779",
 			"key": "amountSale",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "100e5ea3-40f6-4a58-a2b0-4b0b32c47c37",
+			"id": "694d2e5a-155d-4976-acec-bdecd7d430f7",
 			"key": "scorePaymentSale",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "e9355c5f-1657-44ac-bf10-1f9664b4b540",
+			"id": "b785901a-6480-4215-959f-00f9c5d737b3",
 			"key": "isoTimestampNow",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "35185c37-6bc5-410e-8e56-4f0a593553a4",
+			"id": "b78b3e2c-5f25-4487-8917-943ff5a85bc3",
 			"key": "saleId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "7700ef1c-cb23-4edd-aeec-f93cb48a6112",
+			"id": "984b31cf-bba9-41e6-9165-f93971c2c2e9",
 			"key": "saleReceiptNo",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "d5c8d3b3-3fde-46eb-b601-a94bae420559",
+			"id": "161a2de6-f1b5-4173-bed4-3683bc8d89fe",
 			"key": "salePosId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "cba1a883-4099-45d8-bd6f-2d9c132a2d3c",
+			"id": "dacf6ffd-fe30-45db-87f4-7b31a310f698",
 			"key": "newQuantitySaleProduct",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "ae42aaa6-5cc1-4822-a6d1-c34b57e24fbf",
+			"id": "f30eaed9-311f-4017-a40f-c453e5e29581",
 			"key": "newSaleAmount",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "7cda3072-699b-44db-9d72-97d5f2cc3368",
+			"id": "951e309f-e00f-427f-9f1c-88eb4f68ac41",
 			"key": "saleCustomerId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "dab11e01-b86c-481b-8c65-860f1bb2cc4d",
+			"id": "e4bc083b-3a37-42db-84fb-4a48aa1ff6c0",
 			"key": "refundProductBarcode",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "8ff4dc7e-5c98-4a86-9e0a-c3fbdffbd41c",
+			"id": "b36fcafb-5526-495e-b182-1bc16cc3702e",
 			"key": "sellingPriceRefundProduct",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "34baab8e-9c15-4760-84c9-2bead702c5b1",
+			"id": "0adc2f8a-4f79-4af5-bf44-4ea7fbf0082c",
 			"key": "quantityRefundProduct",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "5d36e482-99fc-48be-b0cd-4ae75b1eabf2",
+			"id": "24a84e75-dc6a-48e6-aa53-cf8b09f9a55d",
 			"key": "amountRefund",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "1648802e-c867-4394-9b76-c143eb2f83cf",
+			"id": "72a5ab9b-a5ed-4e30-9c79-843c4d56534c",
 			"key": "scorePaymentRefund",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "7a360bd7-d6ff-4fbb-adc7-110fd81c28b3",
+			"id": "e5ab6c3a-08ac-4c32-a456-f4b00bc3fe23",
 			"key": "timestampNow",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "7b97dae0-8396-4b60-8795-7d99b846b557",
+			"id": "6fc8a233-eef8-4d59-8ccd-1c99bc17c0f5",
 			"key": "refundId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "bba7fb3e-fa63-47bf-ab6a-c808a21abb41",
+			"id": "892a9ba6-641f-40be-a2ba-cb77e30f3e99",
 			"key": "refundCashierId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "f8253f51-4b4a-40f0-8cd5-b3039a03ba9e",
+			"id": "bf10974d-9a3f-4082-8686-2aa82251e636",
 			"key": "refundPosId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "b64a961b-e891-4e9c-8c3c-0d64c5443a36",
+			"id": "6d9c5666-af4c-4c12-a52f-3f48835dbe70",
 			"key": "newQuantityRefundProduct",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "bffc6d26-c495-4302-9d46-213c3be3c6a3",
+			"id": "44054d87-a759-411e-b1e3-0e92cd9397b3",
 			"key": "newAmountRefund",
-			"value": "",
-			"type": "string"
+			"value": ""
 		},
 		{
-			"id": "b366e05b-231f-45d2-b657-b19a47f9ed71",
+			"id": "cf392a7b-90c0-4bcc-a187-d7da78b18d72",
 			"key": "refundSaleId",
-			"value": "",
-			"type": "string"
+			"value": ""
 		}
 	]
 }
