@@ -294,7 +294,7 @@
 					"name": "Продажи на сайте",
 					"item": [
 						{
-							"name": "Данные товара 1",
+							"name": "Данные товара",
 							"event": [
 								{
 									"listen": "test",
@@ -1708,152 +1708,152 @@
 	],
 	"variable": [
 		{
-			"id": "bca3d1b3-1717-433a-898c-7f848456b2e6",
+			"id": "46a44740-753d-4fcf-9c74-4c22c716b613",
 			"key": "type",
 			"value": ""
 		},
 		{
-			"id": "e8a66403-f536-438e-bdaf-abc42bbcec77",
+			"id": "06e6ebb0-f565-4f73-a4f3-606963e94596",
 			"key": "barcode",
 			"value": ""
 		},
 		{
-			"id": "1f759bc3-ab49-4cf1-b3de-4b074bcf3735",
+			"id": "a5c845d9-5872-4c84-9b3e-ecf209129cfc",
 			"key": "posId",
 			"value": ""
 		},
 		{
-			"id": "b989c863-217e-41a1-98a9-5db3db2ce1f0",
+			"id": "dea1c7c3-2334-42eb-b2d5-abaa10bdfd19",
 			"key": "currentDate",
 			"value": ""
 		},
 		{
-			"id": "0ca53610-034f-460e-ba55-81aaa3eef871",
+			"id": "b45f08d5-90ca-43b9-9ea8-c035b3362b1d",
 			"key": "dateMonthAgo",
 			"value": ""
 		},
 		{
-			"id": "f725527b-4d68-48f6-a1ad-8df5d2c34ea3",
+			"id": "61696802-b523-494d-9e7a-76ac13e0261f",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "aa8ecbc4-019e-48e4-8fe3-1451ccebc1bf",
+			"id": "c14f334f-cd13-403e-bc60-8afdffdf250d",
 			"key": "saleProductBarcode",
 			"value": ""
 		},
 		{
-			"id": "60ff144e-88d4-48fb-b1c2-5d08f15df3b4",
+			"id": "1a6f35fb-c2a3-4bc7-a9e9-eea1d06f2f43",
 			"key": "sellingPriceSaleProduct",
 			"value": ""
 		},
 		{
-			"id": "61918cf1-ac9f-4c52-9303-35af82ee8eff",
+			"id": "48335a99-9cfb-401b-a676-39a47ac82b43",
 			"key": "quantitySaleProduct",
 			"value": ""
 		},
 		{
-			"id": "44a90223-ded4-4c12-aa4f-1524d74d03a4",
+			"id": "999b7ae5-9950-45c1-a567-8ef7fd7a9ed0",
 			"key": "amountSale",
 			"value": ""
 		},
 		{
-			"id": "51c65774-1d3c-46c6-a17f-8ad4da1041b9",
+			"id": "86c84fa4-ff7f-48c8-acb2-3ee53102c9d9",
 			"key": "scorePaymentSale",
 			"value": ""
 		},
 		{
-			"id": "8e43ea06-d2cd-4454-917b-edfec941e9a2",
+			"id": "b53d1162-c2e6-489f-bf69-193525f89656",
 			"key": "isoTimestampNow",
 			"value": ""
 		},
 		{
-			"id": "4fade099-be11-4af8-8757-2b49e3b1b15f",
+			"id": "a805df59-5f32-495c-98cf-13dbe65b57db",
 			"key": "saleId",
 			"value": ""
 		},
 		{
-			"id": "5e6f7553-89d3-4531-9cff-4f9e1d2d8361",
+			"id": "d7d18ece-4a5a-40fb-87e5-9172bf9ea978",
 			"key": "saleReceiptNo",
 			"value": ""
 		},
 		{
-			"id": "2ff6cd7d-f9e8-4439-8aea-18205d629729",
+			"id": "92de6486-4324-4e9a-8a6a-be1dc73596a5",
 			"key": "salePosId",
 			"value": ""
 		},
 		{
-			"id": "34ea2a85-7a1e-441c-b10c-9a26b805391d",
+			"id": "6cd0d62e-f1df-4136-ae13-a45df5b5c845",
 			"key": "newQuantitySaleProduct",
 			"value": ""
 		},
 		{
-			"id": "f642b818-6ea9-488b-95b9-df2a2a09800f",
+			"id": "58ced2be-7b9c-477d-b26a-016c508ba31d",
 			"key": "newSaleAmount",
 			"value": ""
 		},
 		{
-			"id": "8bedb1c1-8566-4662-bd7f-a088a3b3881b",
+			"id": "2e14e688-f78c-46bc-a817-19284efb834f",
 			"key": "saleCustomerId",
 			"value": ""
 		},
 		{
-			"id": "e2b61fea-cb13-4e21-aeea-cab5f3c57064",
+			"id": "8d2643a2-e888-42eb-a273-86eb78c0f87c",
 			"key": "refundProductBarcode",
 			"value": ""
 		},
 		{
-			"id": "2aac2c7e-6f92-48ed-b188-7f90afe923ff",
+			"id": "5db7d89d-9e57-48a7-9b9e-b686eefce917",
 			"key": "sellingPriceRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "a4afc460-c65d-45f4-bd40-ace98033aaaa",
+			"id": "84c81a38-4704-4bc7-9bc9-1f404c737f1e",
 			"key": "quantityRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "1e35ec1c-25c5-4127-9e48-5297b056ad14",
+			"id": "fd9d3647-a97c-47b0-83f4-614876d872eb",
 			"key": "amountRefund",
 			"value": ""
 		},
 		{
-			"id": "6d990b3d-ac05-431b-994d-ce315b87ce75",
+			"id": "2eeb5504-559f-4012-b76c-c97d384ec14a",
 			"key": "scorePaymentRefund",
 			"value": ""
 		},
 		{
-			"id": "380335f4-8bf0-4b62-a6d7-00683c5282da",
+			"id": "534f4051-40e5-4ebd-84f5-7843b4413c6c",
 			"key": "timestampNow",
 			"value": ""
 		},
 		{
-			"id": "eb25f8be-db50-48a1-8432-0a741f9f66c0",
+			"id": "aa6b64ac-15b1-4902-affa-7819e8bff79c",
 			"key": "refundId",
 			"value": ""
 		},
 		{
-			"id": "e266b0e3-2735-4768-b3ba-c6718546bb7a",
+			"id": "a14b8b0d-be27-4364-8ed8-0ee8f8136241",
 			"key": "refundCashierId",
 			"value": ""
 		},
 		{
-			"id": "af93de19-da2b-44eb-a397-c0181fee74ae",
+			"id": "8e1ff1dc-d620-4dfc-a35f-ac7b0983ed72",
 			"key": "refundPosId",
 			"value": ""
 		},
 		{
-			"id": "23947d13-c4fe-4eb9-a2fd-c6f5680b64aa",
+			"id": "3728303a-42ad-46c6-811c-d78b664a5233",
 			"key": "newQuantityRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "af7ce201-4fe5-4740-bbbe-dd679850dced",
+			"id": "006624bc-c3c7-4462-a078-81d93b36761f",
 			"key": "newAmountRefund",
 			"value": ""
 		},
 		{
-			"id": "4ed705fb-1165-4998-817a-98fb6020c822",
+			"id": "084c4ba4-5b15-4055-bb4a-4f82b47eb2db",
 			"key": "refundSaleId",
 			"value": ""
 		}
