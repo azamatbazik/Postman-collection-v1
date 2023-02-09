@@ -1,0 +1,1900 @@
+{
+	"info": {
+		"_postman_id": "a003b0fe-6654-4dea-a44a-43185d833cef",
+		"name": "Test autotesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Продажи WEB Copy",
+			"item": [
+				{
+					"name": "Доп.запросы",
+					"item": [
+						{
+							"name": "Данные продаваемого товара",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c8b91e45-bada-4e52-b705-bc97f446906c",
+										"exec": [
+											"pm.collectionVariables.set(\"barcode\", pm.response.json().list[0].barcode);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3ae02380-ce1f-4cd8-aeac-e5af23ca0122",
+										"exec": [
+											"pm.collectionVariables.set(\"type\", 1);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "32176a23-e5ea-4edd-bc6d-15bd9d31cf8d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/nom/product/all?first=0&pageSize=25&type={{type}}&storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"nom",
+										"product",
+										"all"
+									],
+									"query": [
+										{
+											"key": "first",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "25"
+										},
+										{
+											"key": "type",
+											"value": "{{type}}"
+										},
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Список вируальных счетов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d0213832-d81f-4028-a428-e84ab5663834",
+										"exec": [
+											"pm.collectionVariables.set(\"posId\", pm.response.json().poses[0].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "61bfa20b-73ec-4552-88b2-f00e777518f8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/pos/list?isVirtual=true&storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"pos",
+										"list"
+									],
+									"query": [
+										{
+											"key": "isVirtual",
+											"value": "true"
+										},
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Список продаж",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "35b64555-f573-4a82-84c3-90e343219ccb",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f70ef11c-ea8e-481c-a164-955e3a45cc08",
+										"exec": [
+											"pm.collectionVariables.set(\"currentDate\", Date.now()-1000);\r",
+											"pm.collectionVariables.set(\"dateMonthAgo\", Date.now()-((86400*30)*1000));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "2f6b2541-30d0-4b93-9fbc-5ac7eb739c31",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/list?first=0&pageSize=25&posId={{posId}}&dates=true&fromTime={{dateMonthAgo}}&toTime={{currentDate}}&storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"list"
+									],
+									"query": [
+										{
+											"key": "first",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "25"
+										},
+										{
+											"key": "posId",
+											"value": "{{posId}}"
+										},
+										{
+											"key": "dates",
+											"value": "true"
+										},
+										{
+											"key": "fromTime",
+											"value": "{{dateMonthAgo}}"
+										},
+										{
+											"key": "toTime",
+											"value": "{{currentDate}}"
+										},
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Info",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"// // convert user's phone and password into hash, then save the hash into basic_auth\r",
+											"// var hash = btoa(pm.globals.get(\"user_login_pass\"))\r",
+											"// pm.globals.set(\"basic_auth\", \"Basic \" + hash);\r",
+											"\r",
+											"\r",
+											"// // set headers for authorization\r",
+											"// pm.request.headers.add({\r",
+											"//     key: \"Authorization\",\r",
+											"//     value: pm.globals.get(\"user_token\")\r",
+											"// });\r",
+											"\r",
+											"// pm.request.headers.add({\r",
+											"//     key: \"api-ver\",\r",
+											"//     value: pm.globals.get(\"api_ver\")\r",
+											"// });\r",
+											"\r",
+											"// pm.request.headers.add({\r",
+											"//     key: \"client-ver\",\r",
+											"//     value: pm.globals.get(\"client_ver\")\r",
+											"// });\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"id": "aaab4a88-f42f-43eb-bf20-a32c444be0e7"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.globals.set(\"firstName\", pm.response.json().firstName);\r",
+											"pm.collectionVariables.set(\"userId\", pm.response.json().id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "c504fc2b-5838-4f42-ac3d-7ce61281dc82"
+									}
+								}
+							],
+							"_postman_id": "cac46d7b-eb2f-4053-9d3b-3905a3045644",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/profile?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"profile"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "8f3ee47c-42f7-48e0-b6de-f6829cc59d59",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Продажи на сайте",
+					"item": [
+						{
+							"name": "Данные товара 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ea4262af-a713-48ae-a9a7-ab5414241f18",
+										"exec": [
+											"pm.collectionVariables.set(\"saleProductBarcode\", pm.response.json().barcode);\r",
+											"\r",
+											"const sellingPrice = parseInt(pm.response.json().productPrice.sellingPrice);\r",
+											"pm.collectionVariables.set(\"sellingPriceSaleProduct\", sellingPrice);\r",
+											"\r",
+											"const quantityProduct = parseInt(1);\r",
+											"pm.collectionVariables.set(\"quantitySaleProduct\", quantityProduct);\r",
+											"\r",
+											"const amountSale = parseInt(sellingPrice * quantityProduct);\r",
+											"pm.collectionVariables.set(\"amountSale\", amountSale);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "8d5461b8-9921-472a-8b02-6809b98aff23",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/nom/product/{{barcode}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"nom",
+										"product",
+										"{{barcode}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные счета",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d7013efe-30e8-4873-a554-dd2fa9eafdb3",
+										"exec": [
+											"var i = 0;\r",
+											"if(pm.response.json().accounts[i].type.includes(\"POS\")){i++\r",
+											"}\r",
+											"\r",
+											"pm.collectionVariables.set(\"scorePaymentSale\", pm.response.json().accounts[i].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"console.log(pm.collectionVariables.get(\"scorePaymentSale\"));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "a4957917-4c56-4eb7-953b-071d419fc67f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/account/list?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"account",
+										"list"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Создание продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "538c202b-60ae-40b7-92ac-a79b329ae2e9",
+										"exec": [
+											"console.log(pm.response.json().saleId);\r",
+											"pm.collectionVariables.set(\"saleId\", pm.response.json().saleId);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "270388b5-5213-4117-a60f-cac381909077",
+										"exec": [
+											"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-2000);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "1fdbcc2c-20db-4914-9a38-6ebfd58804d5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "saleJson",
+											"value": "{\"userId\":{{userId}},\"id\":null,\"time\":\"{{isoTimestampNow}}\",\"amount\":{{amountSale}},\"comment\":\"\",\"isOfd\":false,\"customerId\":null,\"posId\":null,\"storeId\":null,\"receiptNo\":null}",
+											"type": "text"
+										},
+										{
+											"key": "saleProductsJson",
+											"value": "[{\"barcode\":\"{{saleProductBarcode}}\",\"priceType\":\"RETAIL\",\"storeId\":{{StoreId}},\"quantity\":{{quantitySaleProduct}},\"price\":{{sellingPriceSaleProduct}},\"priceBefore\":{{sellingPriceSaleProduct}}}]",
+											"type": "text"
+										},
+										{
+											"key": "saleCustomFieldsJson",
+											"value": "[]",
+											"type": "text"
+										}
+									],
+									"options": {}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/create?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"create"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные созданной продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9ea8dc13-4480-4c9d-803a-a1be8c4fdff9",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.collectionVariables.set(\"saleReceiptNo\", pm.response.json().sale.receiptNo);\r",
+											"pm.collectionVariables.set(\"salePosId\", pm.response.json().sale.posId);\r",
+											"\r",
+											"let newQuantityProduct = parseInt((pm.response.json().saleProducts[0].quantity) + 1);\r",
+											"pm.collectionVariables.set(\"newQuantitySaleProduct\", newQuantityProduct);\r",
+											"console.log(pm.collectionVariables.get(\"newQuantitySaleProduct\"));\r",
+											"\r",
+											"let newSaleAmount = parseInt(newQuantityProduct * (pm.response.json().productStoreInfos[0].sellingPrice));\r",
+											"pm.collectionVariables.set(\"newSaleAmount\", newSaleAmount);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9910eb8f-fc7c-4d06-9b60-d32ba14ea34d",
+										"exec": [
+											"setTimeout(function(){}, 2000);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "e55abf19-d42b-4235-a0dc-550484511441",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/get/{{saleId}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"get",
+										"{{saleId}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Изменение продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f309a741-b6e8-42d3-ab3d-8bb0ca566da0",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c8473073-bd7c-472e-8012-950c80ed4b82",
+										"exec": [
+											"setTimeout(function(){}, 2000);\r",
+											"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-1000);\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "14e601c7-e8a1-4337-8a77-b9c7e889fcbb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "saleJson",
+											"value": "{\"userId\":{{userId}},\"id\":{{saleId}},\"time\":\"{{isoTimestampNow}}\",\"amount\":{{newSaleAmount}},\"comment\":\"\",\"isOfd\":false,\"customerId\":null,\"posId\":{{salePosId}},\"storeId\":{{StoreId}},\"receiptNo\":{{saleReceiptNo}}}",
+											"type": "text"
+										},
+										{
+											"key": "saleProductsJson",
+											"value": "[{\"barcode\":{{saleProductBarcode}},\"storeId\":{{StoreId}},\"quantity\":{{newQuantitySaleProduct}},\"price\":{{sellingPriceSaleProduct}},\"priceBefore\":{{sellingPriceSaleProduct}}}]",
+											"type": "text"
+										},
+										{
+											"key": "saleCustomFieldsJson",
+											"value": "[]",
+											"type": "text"
+										}
+									],
+									"options": {}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/edit?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"edit"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Создание оплаты",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "374b1214-8957-48eb-95d4-90297d58f98c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "fdac997c-8427-482b-ae59-3959079fd5dc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"saleId\": {{saleId}},\r\n    \"accountId\": {{scorePaymentSale}},\r\n    \"customerId\": \"\",\r\n    \"amount\": {{newSaleAmount}},\r\n    \"useAgentCashback\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/payments/create?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"payments",
+										"create"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "03fa673a-ad4a-40a5-87eb-40f4f4285d14"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"setTimeout(function(){}, 3000);"
+										],
+										"type": "text/javascript",
+										"id": "01604716-67fe-4798-86f1-8f2dc1a15add"
+									}
+								}
+							],
+							"_postman_id": "d5896548-b4dc-4f99-9619-99842a2a7023",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/delete/{{saleId}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"delete",
+										"{{saleId}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "8f3e133d-4640-4bf3-b15f-f86f04c00c3d",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Продажи на сайте с контрагентом",
+					"item": [
+						{
+							"name": "Данные товара 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.collectionVariables.set(\"saleProductBarcode\", pm.response.json().barcode);\r",
+											"\r",
+											"const sellingPrice = parseInt(pm.response.json().productPrice.sellingPrice);\r",
+											"pm.collectionVariables.set(\"sellingPriceSaleProduct\", sellingPrice);\r",
+											"\r",
+											"const quantityProduct = parseInt(1);\r",
+											"pm.collectionVariables.set(\"quantitySaleProduct\", quantityProduct);\r",
+											"\r",
+											"const amountSale = parseInt(sellingPrice * quantityProduct);\r",
+											"pm.collectionVariables.set(\"amountSale\", amountSale);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"id": "64337e45-1841-4ec8-8e4c-35edc801673c"
+									}
+								}
+							],
+							"_postman_id": "23a2f41b-2bcd-4c49-a79a-b4d32207a0ea",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/nom/product/{{barcode}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"nom",
+										"product",
+										"{{barcode}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные счета",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var i = 0;\r",
+											"if(pm.response.json().accounts[i].type.includes(\"POS\")){i++\r",
+											"}\r",
+											"\r",
+											"pm.collectionVariables.set(\"scorePaymentSale\", pm.response.json().accounts[i].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "59e8a07f-e86e-47e9-b6a7-b6e2b6ffd24f"
+									}
+								}
+							],
+							"_postman_id": "74f7e895-cbee-487c-b77a-4e71743f244e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/account/list?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"account",
+										"list"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные контрагента",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"saleCustomerId\", pm.response.json().agents[0].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "db1e877c-55ab-44e8-ac72-d9f691033754"
+									}
+								}
+							],
+							"_postman_id": "705e5ce3-06ed-477f-ad5c-aef582503853",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/agent/list?agentType=CUSTOMER&first=0&pageSize=25&deleted=false&storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"agent",
+										"list"
+									],
+									"query": [
+										{
+											"key": "agentType",
+											"value": "CUSTOMER"
+										},
+										{
+											"key": "first",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "25"
+										},
+										{
+											"key": "deleted",
+											"value": "false"
+										},
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Создание продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"console.log(pm.response.json().saleId);\r",
+											"pm.collectionVariables.set(\"saleId\", pm.response.json().saleId);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "965addcd-75bf-473a-9467-6d4fc7d3d635"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-5000);"
+										],
+										"type": "text/javascript",
+										"id": "16a6809d-0ae7-4aaf-b1bd-17e65335b125"
+									}
+								}
+							],
+							"_postman_id": "ef522864-e7d6-405f-b1f8-87f125124adc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "saleJson",
+											"value": "{\"userId\":{{userId}},\"id\":null,\"time\":\"{{isoTimestampNow}}\",\"amount\":{{amountSale}},\"comment\":\"\",\"isOfd\":false,\"customerId\":{{saleCustomerId}},\"posId\":null,\"storeId\":null,\"receiptNo\":null}",
+											"type": "text"
+										},
+										{
+											"key": "saleProductsJson",
+											"value": "[{\"barcode\":\"{{saleProductBarcode}}\",\"storeId\":{{StoreId}},\"quantity\":{{quantitySaleProduct}},\"price\":{{sellingPriceSaleProduct}},\"priceBefore\":{{sellingPriceSaleProduct}}}]",
+											"type": "text"
+										},
+										{
+											"key": "paymentsJson",
+											"value": "[{\"amount\":{{amountSale}},\"accountId\":{{scorePaymentSale}},\"time\":{{isoTimestampNow}},\"id\":null}]",
+											"type": "text"
+										},
+										{
+											"key": "saleCustomFieldsJson",
+											"value": "[]",
+											"type": "text"
+										}
+									],
+									"options": {}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/create?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"create"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "63bc03c3-3c02-4e6a-9035-9b043da12e4c",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Возвраты продажи на сайте",
+					"item": [
+						{
+							"name": "Данные товара 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.collectionVariables.set(\"refundProductBarcode\", pm.response.json().barcode);\r",
+											"\r",
+											"const sellingPrice = parseInt(pm.response.json().productPrice.sellingPrice);\r",
+											"pm.collectionVariables.set(\"sellingPriceRefundProduct\", sellingPrice);\r",
+											"\r",
+											"const quantityProduct = parseInt(1);\r",
+											"pm.collectionVariables.set(\"quantityRefundProduct\", quantityProduct);\r",
+											"\r",
+											"const amountRefund = parseInt(sellingPrice * quantityProduct);\r",
+											"pm.collectionVariables.set(\"amountRefund\", amountRefund);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"id": "ec1b6ff1-56de-4f37-b29e-278408c8066d"
+									}
+								}
+							],
+							"_postman_id": "9f264b42-8415-4580-aeff-d49413990f46",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/nom/product/{{barcode}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"nom",
+										"product",
+										"{{barcode}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные счета",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var i = 0;\r",
+											"if(pm.response.json().accounts[i].type.includes(\"POS\")){i++\r",
+											"}\r",
+											"\r",
+											"pm.collectionVariables.set(\"scorePaymentRefund\", pm.response.json().accounts[i].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "32e136b4-4cc7-494b-a0e9-fe2e150aa192"
+									}
+								}
+							],
+							"_postman_id": "8f5964e0-8dcc-40b3-a169-23e0efca3dde",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/account/list?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"account",
+										"list"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Возвраты продажи на сайте",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3885ab70-7678-4951-9dfb-702bb793c5ef",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"console.log(pm.response.json().refund.id);\r",
+											"pm.collectionVariables.set(\"refundId\", pm.response.json().refund.id);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "be54ea9b-92b8-4996-8ce6-28326e06b8d3",
+										"exec": [
+											"pm.collectionVariables.set(\"timestampNow\", Date.now() - 1000);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "63a20fa2-89f8-4dac-a71a-5fa65c90b4b8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refund\": {\r\n        \"id\": null,\r\n        \"saleId\": null,\r\n        \"customerId\": null,\r\n        \"cashierId\": null,\r\n        \"posId\": null,\r\n        \"userId\": null,\r\n        \"amount\": {{amountRefund}},\r\n        \"isOfd\": null,\r\n        \"paidAmount\": 0,\r\n        \"storeId\": null,\r\n        \"time\": \"{{timestampNow}}\",\r\n        \"note\": \"\",\r\n        \"cashbackAmount\": null\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"barcode\": \"{{refundProductBarcode}}\",\r\n            \"priceType\": \"RETAIL\" ,\r\n            \"price\": {{sellingPriceRefundProduct}},\r\n            \"quantity\": {{quantityRefundProduct}}\r\n        }\r\n    ],\r\n    \"payments\": [\r\n        {\r\n            \"time\": {{timestampNow}},\r\n            \"amount\": {{amountRefund}},\r\n            \"accountId\": {{scorePaymentRefund}},\r\n            \"id\": null\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/refund/create?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"refund",
+										"create"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные возврата продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.collectionVariables.set(\"refundCashierId\", pm.response.json().refund.cashierId);\r",
+											"pm.collectionVariables.set(\"refundPosId\", pm.response.json().refund.posId);\r",
+											"\r",
+											"var newQuantityRefundProduct = parseInt((pm.response.json().products[0].quantity) + 1);\r",
+											"pm.collectionVariables.set(\"newQuantityRefundProduct\", newQuantityRefundProduct);\r",
+											"console.log(pm.collectionVariables.get(\"newQuantityRefundProduct\"));\r",
+											"\r",
+											"var newAmountRefund = parseInt(newQuantityRefundProduct * (pm.response.json().products[0].price));\r",
+											"pm.collectionVariables.set(\"newAmountRefund\", newAmountRefund);"
+										],
+										"type": "text/javascript",
+										"id": "0359a443-5f49-41ea-acce-25e3f8fd8023"
+									}
+								}
+							],
+							"_postman_id": "ea0cf463-9e8e-4310-8995-0824b10cbb6f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/refund/get/{{refundId}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"refund",
+										"get",
+										"{{refundId}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Изменение данных в созданном возврате продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "af742758-97bc-474d-8e8d-54610ba4987d"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"timestampNow\", Date.now() - 1000);"
+										],
+										"type": "text/javascript",
+										"id": "376db601-ed5c-46ae-9a29-0ba9129e7860"
+									}
+								}
+							],
+							"_postman_id": "80175c74-08cb-44cc-8aa2-5a59e879cd3f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refund\": {\r\n        \"id\": {{refundId}},\r\n        \"saleId\": null,\r\n        \"customerId\": null,\r\n        \"cashierId\": {{refundCashierId}},\r\n        \"posId\": {{refundPosId}},\r\n        \"userId\": {{userId}},\r\n        \"amount\": {{newAmountRefund}},\r\n        \"isOfd\": false,\r\n        \"paidAmount\": {{amountRefund}},\r\n        \"storeId\": {{StoreId}},\r\n        \"time\": \"{{timestampNow}}\",\r\n        \"note\": \"\",\r\n        \"cashbackAmount\": null\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"barcode\": {{refundProductBarcode}},\r\n            \"price\": {{sellingPriceRefundProduct}},\r\n            \"quantity\": {{newQuantityRefundProduct}}\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/refund/update/{{refundId}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"refund",
+										"update",
+										"{{refundId}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление возврата продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "c01bad4c-b060-4f6a-9186-229c59a82180"
+									}
+								}
+							],
+							"_postman_id": "3c061121-61a4-438b-97ac-06c2286962ad",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/refund/delete/{{refundId}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"refund",
+										"delete",
+										"{{refundId}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "1e6a8bda-23d5-4c84-a06d-29aa6bf9932d",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Возвраты продажи на сайте c контрагентом",
+					"item": [
+						{
+							"name": "Данные товара 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.collectionVariables.set(\"saleProductBarcode\", pm.response.json().barcode);\r",
+											"\r",
+											"const sellingPrice = parseInt(pm.response.json().productPrice.sellingPrice);\r",
+											"pm.collectionVariables.set(\"sellingPriceSaleProduct\", sellingPrice);\r",
+											"\r",
+											"const quantityProduct = parseInt(1);\r",
+											"pm.collectionVariables.set(\"quantitySaleProduct\", quantityProduct);\r",
+											"\r",
+											"const amountSale = parseInt(sellingPrice * quantityProduct);\r",
+											"pm.collectionVariables.set(\"amountSale\", amountSale);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"id": "1bcc3192-6be5-4749-bce4-671411db6b7e"
+									}
+								}
+							],
+							"_postman_id": "c78f4095-5ad7-48d2-ba3e-6895d1b54215",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/nom/product/{{barcode}}?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"nom",
+										"product",
+										"{{barcode}}"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные счета",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var i = 0;\r",
+											"if(pm.response.json().accounts[i].type.includes(\"POS\")){i++\r",
+											"}\r",
+											"\r",
+											"pm.collectionVariables.set(\"scorePaymentSale\", pm.response.json().accounts[i].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "9043819b-44a0-462c-a644-55df08d7df71"
+									}
+								}
+							],
+							"_postman_id": "7648f09d-e737-45a7-842a-97593d67a9d4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/account/list?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"account",
+										"list"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Данные контрагента",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"saleCustomerId\", pm.response.json().agents[0].id);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "5cd46e17-c822-487f-9c19-f0e15697cbc8"
+									}
+								}
+							],
+							"_postman_id": "fba989a2-6999-4177-94fe-16be11d8e489",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/rest/cabinet/org/agent/list?agentType=CUSTOMER&first=0&pageSize=25&deleted=false&storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"org",
+										"agent",
+										"list"
+									],
+									"query": [
+										{
+											"key": "agentType",
+											"value": "CUSTOMER"
+										},
+										{
+											"key": "first",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "25"
+										},
+										{
+											"key": "deleted",
+											"value": "false"
+										},
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Создание продажи",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"console.log(pm.response.json().saleId);\r",
+											"pm.collectionVariables.set(\"saleId\", pm.response.json().saleId);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"id": "9f933c57-992e-445f-bf64-5b91657f1cfa"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-5000);"
+										],
+										"type": "text/javascript",
+										"id": "3ec212da-01ca-4832-8671-50e875632bd7"
+									}
+								}
+							],
+							"_postman_id": "c1a0f040-343f-42c1-8daf-d94c6d3c6c0a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "saleJson",
+											"value": "{\"userId\":{{userId}},\"id\":null,\"time\":\"{{isoTimestampNow}}\",\"amount\":{{amountSale}},\"comment\":\"\",\"isOfd\":false,\"customerId\":{{saleCustomerId}},\"posId\":null,\"storeId\":null,\"receiptNo\":null}",
+											"type": "text"
+										},
+										{
+											"key": "saleProductsJson",
+											"value": "[{\"barcode\":\"{{saleProductBarcode}}\",\"storeId\":{{StoreId}},\"quantity\":{{quantitySaleProduct}},\"price\":{{sellingPriceSaleProduct}},\"priceBefore\":{{sellingPriceSaleProduct}}}]",
+											"type": "text"
+										},
+										{
+											"key": "paymentsJson",
+											"value": "[{\"amount\":{{amountSale}},\"accountId\":{{scorePaymentSale}},\"time\":{{isoTimestampNow}},\"id\":null}]",
+											"type": "text"
+										},
+										{
+											"key": "saleCustomFieldsJson",
+											"value": "[]",
+											"type": "text"
+										}
+									],
+									"options": {}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/sale/create?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"sale",
+										"create"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Возвраты продажи на сайте",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4121896f-e5f5-49e6-9528-8b85ebc90c22",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"console.log(pm.response.json().refund.id);\r",
+											"pm.collectionVariables.set(\"refundSaleId\", pm.response.json().refund.id);"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5f37d590-7d5c-4f8e-bc11-3e633b7ffe76",
+										"exec": [
+											"pm.collectionVariables.set(\"timestampNow\", Date.now() - 1000);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "85684186-c2c2-4f2f-97ea-f2a066723ba8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refund\": {\r\n        \"id\": null,\r\n        \"saleId\": {{saleId}},\r\n        \"customerId\": {{saleCustomerId}},\r\n        \"cashierId\": null,\r\n        \"posId\": null,\r\n        \"userId\": null,\r\n        \"amount\": {{amountSale}},\r\n        \"isOfd\": null,\r\n        \"paidAmount\": 0,\r\n        \"storeId\": null,\r\n        \"time\": \"{{timestampNow}}\",\r\n        \"note\": \"\",\r\n        \"cashbackAmount\": null\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"barcode\": \"{{saleProductBarcode}}\",\r\n            \"priceType\": \"RETAIL\" ,\r\n            \"price\": {{sellingPriceSaleProduct}},\r\n            \"quantity\": {{quantitySaleProduct}}\r\n        }\r\n    ],\r\n    \"payments\": [\r\n        {\r\n            \"time\": {{timestampNow}},\r\n            \"amount\": {{amountSale}},\r\n            \"accountId\": {{scorePaymentRefund}},\r\n            \"id\": null\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/rest/cabinet/opr/refund/create?storeId={{StoreId}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rest",
+										"cabinet",
+										"opr",
+										"refund",
+										"create"
+									],
+									"query": [
+										{
+											"key": "storeId",
+											"value": "{{StoreId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "cd2e2428-8575-4f10-9609-7d561639d5ea",
+					"_postman_isSubFolder": true
+				}
+			],
+			"_postman_id": "e9385065-1abd-411e-889d-adc4ae5a32f2"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f01a9e10-f08e-454d-9b55-f3c4124b91a9",
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({",
+					"    key: \"api-ver\",",
+					"    value: pm.globals.get(\"api_ver\")",
+					"});",
+					"",
+					"pm.request.headers.add({",
+					"    key: \"client-ver\",",
+					"    value: pm.globals.get(\"client_ver\")",
+					"});",
+					"",
+					"pm.request.headers.add({",
+					"    key: \"Authorization\",",
+					"    value: pm.globals.get(\"user_token\")",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9a56c8c1-ed0b-4dcd-8f5a-6ba9d9b2fe6c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "808fb331-6e83-4a58-aa3a-f537abe26a4c",
+			"key": "type",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "2d5a0230-ce2f-4520-86b0-94352fd1c5c0",
+			"key": "barcode",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "dccb58b2-bc09-4eb5-a0a8-dd1554493756",
+			"key": "posId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "170018d1-7b15-4a85-af8b-12a57ea682b2",
+			"key": "currentDate",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "8e261561-817e-41f3-9681-864620b289ea",
+			"key": "dateMonthAgo",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "ffa81216-7df1-4e8a-9111-80d7aab42b66",
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bf8b69d3-a328-4216-b4c9-4e8841b2d0c9",
+			"key": "saleProductBarcode",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7254627c-4043-41c5-9448-adb54031106f",
+			"key": "sellingPriceSaleProduct",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3e1fefef-116d-464d-b406-ad3e51e504d4",
+			"key": "quantitySaleProduct",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "f5bc1960-d848-4f86-b3aa-2abcaa8eb316",
+			"key": "amountSale",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "100e5ea3-40f6-4a58-a2b0-4b0b32c47c37",
+			"key": "scorePaymentSale",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "e9355c5f-1657-44ac-bf10-1f9664b4b540",
+			"key": "isoTimestampNow",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "35185c37-6bc5-410e-8e56-4f0a593553a4",
+			"key": "saleId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7700ef1c-cb23-4edd-aeec-f93cb48a6112",
+			"key": "saleReceiptNo",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "d5c8d3b3-3fde-46eb-b601-a94bae420559",
+			"key": "salePosId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "cba1a883-4099-45d8-bd6f-2d9c132a2d3c",
+			"key": "newQuantitySaleProduct",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "ae42aaa6-5cc1-4822-a6d1-c34b57e24fbf",
+			"key": "newSaleAmount",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7cda3072-699b-44db-9d72-97d5f2cc3368",
+			"key": "saleCustomerId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "dab11e01-b86c-481b-8c65-860f1bb2cc4d",
+			"key": "refundProductBarcode",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "8ff4dc7e-5c98-4a86-9e0a-c3fbdffbd41c",
+			"key": "sellingPriceRefundProduct",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "34baab8e-9c15-4760-84c9-2bead702c5b1",
+			"key": "quantityRefundProduct",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "5d36e482-99fc-48be-b0cd-4ae75b1eabf2",
+			"key": "amountRefund",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "1648802e-c867-4394-9b76-c143eb2f83cf",
+			"key": "scorePaymentRefund",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7a360bd7-d6ff-4fbb-adc7-110fd81c28b3",
+			"key": "timestampNow",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "7b97dae0-8396-4b60-8795-7d99b846b557",
+			"key": "refundId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bba7fb3e-fa63-47bf-ab6a-c808a21abb41",
+			"key": "refundCashierId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "f8253f51-4b4a-40f0-8cd5-b3039a03ba9e",
+			"key": "refundPosId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "b64a961b-e891-4e9c-8c3c-0d64c5443a36",
+			"key": "newQuantityRefundProduct",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bffc6d26-c495-4302-9d46-213c3be3c6a3",
+			"key": "newAmountRefund",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "b366e05b-231f-45d2-b657-b19a47f9ed71",
+			"key": "refundSaleId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
