@@ -1683,6 +1683,1399 @@
 				}
 			],
 			"id": "e9385065-1abd-411e-889d-adc4ae5a32f2"
+		},
+		{
+			"name": "Приемка Copy",
+			"item": [
+				{
+					"name": "Создание приемки",
+					"item": [
+						{
+							"name": "Доп. запросы",
+							"item": [
+								{
+									"name": "Список товаров",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "79d35e42-7d3e-442c-b5e7-992091d2f975",
+												"exec": [
+													"pm.collectionVariables.set(\"allBarcode\", pm.response.json().list[0].barcode);\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "57ae2dc0-620b-4d2d-82d6-4b713eba21a1",
+												"exec": [
+													"pm.collectionVariables.set(\"type\", 0);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "6d7e57ef-2c95-46fe-9b65-9ee9d51a81c4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"time\": \"2022-06-05T07:44:38.942Z\",\r\n    \"amount\": 200,\r\n    \"paymentType\": 0,\r\n    \"payment\": 0,\r\n    \"supplyProducts\": [\r\n        {\r\n            \"isDisabledSellingPrice\": false,\r\n            \"isVisiblePriceBefore\": false,\r\n            \"isVisibleOldSellingPrice\": false,\r\n            \"__markupOrigin\": 35,\r\n            \"productDetail\": {\r\n                \"productUnits\": [],\r\n                \"product\": {\r\n                    \"measure\": 0,\r\n                    \"type\": 0,\r\n                    \"id\": 130300210,\r\n                    \"storeGroupId\": 13692,\r\n                    \"code\": \"4041811017401\",\r\n                    \"barcode\": 4041811017401,\r\n                    \"name\": \"АНАНАСЫ \\\"VITALAND\\\" КОЛЕЧКИ 580 мл. 1/12\",\r\n                    \"createTime\": 1648809659000,\r\n                    \"editTime\": \"2022-06-05T13:15:35+0600\",\r\n                    \"categoryId\": 1528393,\r\n                    \"isDeleted\": false,\r\n                    \"auxAttrTypeId\": 2\r\n                },\r\n                \"additionalCodes\": [],\r\n                \"arrivalCost\": 200,\r\n                \"sellingPrice\": 270,\r\n                \"wholesalePrice\": 100,\r\n                \"markup\": 0,\r\n                \"packages\": [],\r\n                \"isPackage\": false,\r\n                \"isService\": false,\r\n                \"additionalExpense\": 0,\r\n                \"storeId\": 15955,\r\n                \"productId\": 130300210,\r\n                \"isHiddenOnScale\": false,\r\n                \"numberOnScale\": null,\r\n                \"stockQuantity\": 11,\r\n                \"category\": {\r\n                    \"id\": 1528392,\r\n                    \"name\": \"FunctionName\",\r\n                    \"isDeleted\": false,\r\n                    \"storeGroupId\": 5885,\r\n                    \"parentId\": null,\r\n                    \"globalCategory\": null,\r\n                    \"editTime\": 1643085560000,\r\n                    \"createTime\": 1643085560000\r\n                },\r\n                \"subCategory\": {\r\n                    \"id\": 1528393,\r\n                    \"name\": \"Testname\",\r\n                    \"isDeleted\": false,\r\n                    \"storeGroupId\": 5885,\r\n                    \"parentId\": 1528392,\r\n                    \"globalCategory\": null,\r\n                    \"editTime\": 1645441228000,\r\n                    \"createTime\": 1643085560000\r\n                }\r\n            },\r\n            \"quantity\": 1,\r\n            \"arrivalCost\": 200,\r\n            \"priceBefore\": 200,\r\n            \"oldArrivalCost\": 200,\r\n            \"discount\": 0,\r\n            \"sellingPrice\": 270,\r\n            \"oldSellingPrice\": 270,\r\n            \"sellingPriceCopy\": 270,\r\n            \"rowId\": 0,\r\n            \"price\": 200,\r\n            \"amount\": 200,\r\n            \"oldAmount\": 200,\r\n            \"oldMarkup\": 35\r\n        }\r\n    ],\r\n    \"bonusProducts\": [],\r\n    \"overdueProducts\": [],\r\n    \"type\": 0,\r\n    \"isSupplyChange\": true,\r\n    \"isBindProductToSupplier\": true,\r\n    \"isSellingPriceChangeable\": true,\r\n    \"isSumSameProducts\": true,\r\n    \"isRestoreDeletedProducts\": true,\r\n    \"supplierId\": 1595592,\r\n    \"accountId\": 1802753\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/nom/product/all?first=0&pageSize=25&type={{type}}&storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"nom",
+												"product",
+												"all"
+											],
+											"query": [
+												{
+													"key": "first",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "25"
+												},
+												{
+													"key": "type",
+													"value": "{{type}}"
+												},
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User Info",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"// // convert user's phone and password into hash, then save the hash into basic_auth\r",
+													"// var hash = btoa(pm.globals.get(\"user_login_pass\"))\r",
+													"// pm.globals.set(\"basic_auth\", \"Basic \" + hash);\r",
+													"\r",
+													"\r",
+													"// // set headers for authorization\r",
+													"// pm.request.headers.add({\r",
+													"//     key: \"Authorization\",\r",
+													"//     value: pm.globals.get(\"user_token\")\r",
+													"// });\r",
+													"\r",
+													"// pm.request.headers.add({\r",
+													"//     key: \"api-ver\",\r",
+													"//     value: pm.globals.get(\"api_ver\")\r",
+													"// });\r",
+													"\r",
+													"// pm.request.headers.add({\r",
+													"//     key: \"client-ver\",\r",
+													"//     value: pm.globals.get(\"client_ver\")\r",
+													"// });\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"id": "274928d1-7f9d-456c-b394-f09364334d15"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.globals.set(\"firstName\", pm.response.json().firstName);\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "1efca87b-a1d8-4002-a27b-747da1e3e102"
+											}
+										}
+									],
+									"id": "98b52436-ec5a-43e2-ac7e-288f85c7e17c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/org/profile?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"org",
+												"profile"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "e595a569-97e9-4afb-abac-a9a6be52b18e"
+						},
+						{
+							"name": "Rest-ы по приемке",
+							"item": [
+								{
+									"name": "Данные счетов 1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"supplyPaymetnScoreId\", pm.response.json().accounts[0].id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "37fe5e88-4d95-42b4-bb5e-f25342de4df9"
+											}
+										}
+									],
+									"id": "2dd74036-792c-43f1-adac-753b7d0a1cca",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/org/account/list?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"org",
+												"account",
+												"list"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Список поставщиков",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"supplierId\", pm.response.json()[0].id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "15b73712-dcaa-4c4a-b94c-20a01514b91d"
+											}
+										}
+									],
+									"id": "6030a44d-bdbe-4b63-a9fd-e29c0c740f3a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/org/agent/list-agent-names?agentType=SUPPLIER&storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"org",
+												"agent",
+												"list-agent-names"
+											],
+											"query": [
+												{
+													"key": "agentType",
+													"value": "SUPPLIER"
+												},
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Данные товара(безЦены)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "304572a3-9c80-4b77-8495-aaa40e2da800",
+												"exec": [
+													"pm.collectionVariables.set(\"dataOfProduct\", JSON.stringify(pm.response.json().product));\r",
+													"pm.collectionVariables.set(\"stockQuantity\", pm.response.json().stockQuantity);\r",
+													"pm.test(\"Status code is 422\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"let response = responseBody;\r",
+													"// if(response === \"Товар с таким штрихкодом является комплектом.\"){\r",
+													"//     throw new Error(\"Error This type of product cannot be used\");\r",
+													"// }\r",
+													"// if(pm.response.to.have.status(422) & pm.response.body(\"Товар с таким штрихкодом является комплектом.\")){\r",
+													"//     pm.test(\"Status code is 422 and type products is not validate\", function(){\r",
+													"//         pm.response.to.have.status(422);\r",
+													"//     });\r",
+													"// }"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "b69186ed-a4f0-4273-9682-408214e12492",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/nom/product/findProductByBarcode?showServices=false&showPackages=false&showDeleted=true&barcode={{allBarcode}}&create=true&storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"nom",
+												"product",
+												"findProductByBarcode"
+											],
+											"query": [
+												{
+													"key": "showServices",
+													"value": "false"
+												},
+												{
+													"key": "showPackages",
+													"value": "false"
+												},
+												{
+													"key": "showDeleted",
+													"value": "true"
+												},
+												{
+													"key": "barcode",
+													"value": "{{allBarcode}}"
+												},
+												{
+													"key": "create",
+													"value": "true"
+												},
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Данные товара(сЦенами)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"let category = pm.response.json().category;\r",
+													"if(category !== null ) {\r",
+													"    pm.collectionVariables.set(\"dataOfCategory\", JSON.stringify(pm.response.json().category));\r",
+													"\r",
+													"\r",
+													"    let subCategory = pm.response.json().subCategory;\r",
+													"    if(subCategory !== null) {\r",
+													"        pm.collectionVariables.set(JSON.stringify(\"dataOfSubCategory\", JSON.stringify(pm.response.json().subCategory)));\r",
+													"    }else{\r",
+													"        pm.collectionVariables.set(\"dataOfSubCategory\", JSON.stringify({\"id\":null}));\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"pm.collectionVariables.set(\"supplyProductId\", pm.response.json().productInfo.id);\r",
+													"pm.collectionVariables.set(\"supplyArrivalCostProductPrise\", pm.response.json().productPrice.arrivalCost);\r",
+													"pm.collectionVariables.set(\"supplySellingPriceProductPrise\", pm.response.json().productPrice.sellingPrice);\r",
+													"pm.collectionVariables.set(\"supplyWholesalePriceProductPrice\", pm.response.json().productPrice.wholesalePrice);\r",
+													"\r",
+													"var supplyArrivalCostProduct = parseFloat(pm.response.json().productPrice.arrivalCost);\r",
+													"var supplySellingPriceProduct = parseInt(pm.response.json().productPrice.sellingPrice);\r",
+													"\r",
+													"var amountMarkup = supplySellingPriceProduct - supplyArrivalCostProduct;\r",
+													"var onePercent = supplyArrivalCostProduct / 100;\r",
+													"var percentMarkup = amountMarkup / onePercent;\r",
+													"pm.collectionVariables.set(\"percentMarkup\", percentMarkup);\r",
+													"\r",
+													"var quantityProduct = 1;\r",
+													"pm.collectionVariables.set(\"quantityProduct\", quantityProduct);\r",
+													"var supplyAmount = supplyArrivalCostProduct * quantityProduct;\r",
+													"\r",
+													"pm.collectionVariables.set(\"supplyAmount\", supplyAmount);\r",
+													"\r",
+													"var newQuantityProduct = 10;\r",
+													"var newSupplyArrivalCostProduct = supplyArrivalCostProduct + 10;\r",
+													"var supplySumMarkup = (newSupplyArrivalCostProduct / 100) * percentMarkup;\r",
+													"var newSupplySellingPriceProduct = newSupplyArrivalCostProduct + supplySumMarkup;\r",
+													"var newSupplyAmount = newSupplyArrivalCostProduct * newQuantityProduct;\r",
+													"pm.collectionVariables.set(\"newQuantityProduct\", newQuantityProduct);\r",
+													"pm.collectionVariables.set(\"newSupplyAmount\", newSupplyAmount);\r",
+													"pm.collectionVariables.set(\"newSupplyArrivalCostProduct\", newSupplyArrivalCostProduct);\r",
+													"pm.collectionVariables.set(\"newSupplySellingPriceProduct\", newSupplySellingPriceProduct);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "51ec9fcc-312a-40cc-b5a1-e5b4c611ccda"
+											}
+										}
+									],
+									"id": "e9518eed-8338-492e-9a9b-d2b21af7459e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/nom/product/{{allBarcode}}?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"nom",
+												"product",
+												"{{allBarcode}}"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create and provide supply",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-2000);\r",
+													""
+												],
+												"type": "text/javascript",
+												"id": "08224d4a-1bd7-452b-bda5-45ccdc0489f4"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});\r",
+													"\r",
+													"console.log(pm.response.json().id);\r",
+													"pm.collectionVariables.set(\"supplyId\", pm.response.json().id);"
+												],
+												"type": "text/javascript",
+												"id": "ae858a78-7f65-439d-be1e-78e364549d23"
+											}
+										}
+									],
+									"id": "63561d55-5f45-449d-ba8a-8e89d9ce2d73",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"time\": \"{{isoTimestampNow}}\",\r\n    \"amount\": {{supplyAmount}},\r\n    \"paymentType\": 0,\r\n    \"payment\": 0,\r\n    \"supplyProducts\": [\r\n        {\r\n            \"isDisabledSellingPrice\": false,\r\n            \"isVisiblePriceBefore\": false,\r\n            \"isVisibleOldSellingPrice\": false,\r\n            \"__markupOrigin\": {{percentMarkup}},\r\n            \"productDetail\": {\r\n                \"productUnits\": [],\r\n                \"product\": {{dataOfProduct}},\r\n                \"additionalCodes\": [],\r\n                \"arrivalCost\": {{supplyArrivalCostProductPrise}},\r\n                \"sellingPrice\": {{supplySellingPriceProductPrise}},\r\n                \"wholesalePrice\": {{supplyWholesalePriceProductPrice}},\r\n                \"markup\": {{percentMarkup}},\r\n                \"packages\": [],\r\n                \"isPackage\": false,\r\n                \"isService\": false,\r\n                \"additionalExpense\": null,\r\n                \"storeId\": {{StoreId}},\r\n                \"productId\": {{supplyProductId}},\r\n                \"isHiddenOnScale\": false,\r\n                \"numberOnScale\": null,\r\n                \"stockQuantity\": {{stockQuantity}},\r\n                \"category\": {{dataOfCategory}},\r\n                \"subCategory\": {{dataOfSubCategory}}\r\n            },\r\n            \"quantity\": {{quantityProduct}},\r\n            \"arrivalCost\": {{supplyArrivalCostProductPrise}},\r\n            \"priceBefore\": {{supplySellingPriceProductPrise}},\r\n            \"oldArrivalCost\": {{supplyArrivalCostProductPrise}},\r\n            \"discount\": 0,\r\n            \"sellingPrice\": {{supplySellingPriceProductPrise}},\r\n            \"oldSellingPrice\": {{supplySellingPriceProductPrise}},\r\n            \"sellingPriceCopy\": {{supplySellingPriceProductPrise}},\r\n            \"rowId\": 0,\r\n            \"price\": {{supplyArrivalCostProductPrise}},\r\n            \"amount\": {{supplyAmount}},\r\n            \"oldAmount\": {{supplyAmount}},\r\n            \"oldMarkup\": 0\r\n        }\r\n    ],\r\n    \"bonusProducts\": [],\r\n    \"overdueProducts\": [],\r\n    \"type\": 0,\r\n    \"isSupplyChange\": true,\r\n    \"isBindProductToSupplier\": true,\r\n    \"isSellingPriceChangeable\": true,\r\n    \"isSumSameProducts\": true,\r\n    \"isRestoreDeletedProducts\": true,\r\n    \"supplierId\": {{supplierId}},\r\n    \"accountId\": {{supplyPaymetnScoreId}}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/create?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"create"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create supply as draft",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});\r",
+													"\r",
+													"console.log(pm.response.json().id);\r",
+													"pm.collectionVariables.set(\"draftSupplyId\", pm.response.json().id);\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"id": "11fcc827-9875-4f76-b3df-345a78382936"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-2000);\r",
+													""
+												],
+												"type": "text/javascript",
+												"id": "6bf3661d-6c4e-435e-9835-20e2670b660f"
+											}
+										}
+									],
+									"id": "b3d30e05-a51f-4a2e-9c0e-efd559703462",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"time\": \"{{isoTimestampNow}}\",\r\n    \"amount\": {{newSupplyAmount}},\r\n    \"paymentType\": 2,\r\n    \"payment\": 0,\r\n    \"supplyProducts\": [\r\n        {\r\n            \"isDisabledSellingPrice\": false,\r\n            \"isVisiblePriceBefore\": false,\r\n            \"isVisibleOldSellingPrice\": false,\r\n            \"__markupOrigin\": {{percentMarkup}},\r\n            \"productDetail\": {\r\n                \"productUnits\": [],\r\n                \"product\": {{dataOfProduct}},\r\n                \"additionalCodes\": [],\r\n                \"arrivalCost\": {{newSupplyArrivalCostProduct}},\r\n                \"sellingPrice\": {{newSupplySellingPriceProduct}},\r\n                \"wholesalePrice\": {{supplyWholesalePriceProductPrice}},\r\n                \"markup\": {{percentMarkup}},\r\n                \"packages\": [],\r\n                \"isPackage\": false,\r\n                \"isService\": false,\r\n                \"additionalExpense\": null,\r\n                \"storeId\": {{StoreId}},\r\n                \"productId\": {{supplyProductId}},\r\n                \"isHiddenOnScale\": false,\r\n                \"numberOnScale\": null,\r\n                \"stockQuantity\": {{stockQuantity}},\r\n                \"category\": {{dataOfCategory}},\r\n                \"subCategory\": {{dataOfSubCategory}}\r\n            },\r\n            \"quantity\": {{newQuantityProduct}},\r\n            \"arrivalCost\": {{newSupplyArrivalCostProduct}},\r\n            \"priceBefore\": {{newSupplySellingPriceProduct}},\r\n            \"oldArrivalCost\": {{newSupplyArrivalCostProduct}},\r\n            \"discount\": 0,\r\n            \"sellingPrice\": {{newSupplySellingPriceProduct}},\r\n            \"oldSellingPrice\": {{newSupplySellingPriceProduct}},\r\n            \"sellingPriceCopy\": {{newSupplySellingPriceProduct}},\r\n            \"rowId\": 0,\r\n            \"price\": {{newSupplyArrivalCostProduct}},\r\n            \"amount\": {{newSupplyAmount}},\r\n            \"oldAmount\": {{newSupplyAmount}},\r\n            \"oldMarkup\": 0\r\n        }\r\n    ],\r\n    \"bonusProducts\": [],\r\n    \"overdueProducts\": [],\r\n    \"type\": 0,\r\n    \"isSupplyChange\": true,\r\n    \"isBindProductToSupplier\": true,\r\n    \"isSellingPriceChangeable\": true,\r\n    \"isSumSameProducts\": true,\r\n    \"isRestoreDeletedProducts\": true,\r\n    \"supplierId\": {{supplierId}}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/createTemplate?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"createTemplate"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "параметры приемки",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonObject = pm.response.json();\r",
+													"var jsonObjectAsString = JSON.stringify(jsonObject);\r",
+													"pm.collectionVariables.set(\"supplyDraft\", jsonObjectAsString);\r",
+													"jsonObject.supplyProducts[0].quantity += 5;\r",
+													"pm.collectionVariables.set(\"supplyDraft\", JSON.stringify(jsonObject));\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "97287bf2-5bf8-4bef-b51c-a7d593d5b297"
+											}
+										}
+									],
+									"id": "35cd5ace-26df-4fe3-bd3d-db712d6dd837",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/{{draftSupplyId}}?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"{{draftSupplyId}}"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update supply as draft",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"let newSupplyDraft = pm.collectionVariables.get(\"supplyDraft\");"
+												],
+												"type": "text/javascript",
+												"id": "75991b6a-2d38-49a1-a4ea-6bcb1be40e4e"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-2000);\r",
+													"// var updateNewQuantity = parseInt(pm.collectionVariables.supplyDraft) + 5;\r",
+													"// pm.collectionVariables.set(\"updateNewQuantity\", updateNewQuantity);"
+												],
+												"type": "text/javascript",
+												"id": "60b0be01-7c45-4985-a2c2-df2e0aea2070"
+											}
+										}
+									],
+									"id": "d2029bad-79a4-4554-9f5c-8d8eae474b69",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{supplyDraft}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/editTemplate?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"editTemplate"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "параметры измененной приемки",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonObject = pm.response.json();\r",
+													"var jsonObjectAsString = JSON.stringify(jsonObject);\r",
+													"pm.collectionVariables.set(\"supplyDraft\", jsonObjectAsString);\r",
+													"jsonObject.paymentType = 0;\r",
+													"jsonObject.accountId = (pm.collectionVariables.get(\"supplyPaymetnScoreId\"));\r",
+													"pm.collectionVariables.set(\"supplyDraft\", JSON.stringify(jsonObject));\r",
+													"\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "7579e257-2a46-485d-b837-7c3bc9a8d332"
+											}
+										}
+									],
+									"id": "ad542fe8-18fa-40fc-84b7-025eff21d954",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/{{draftSupplyId}}?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"{{draftSupplyId}}"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Provide draft supply",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var date = Date.now()-2000\r",
+													"pm.collectionVariables.set(\"isoTimestampNow\", date);\r",
+													""
+												],
+												"type": "text/javascript",
+												"id": "681cfe6c-2fa8-47d2-b2fa-6e8179b0fad3"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var jsonObject = pm.response.json();\r",
+													"var jsonObjectAsString = JSON.stringify(jsonObject);\r",
+													"pm.collectionVariables.set(\"supplyDraft\", jsonObjectAsString);\r",
+													"jsonObject.paymentType = 2;\r",
+													"delete jsonObject.accountId;\r",
+													"pm.collectionVariables.set(\"supplyDraft\", JSON.stringify(jsonObject));"
+												],
+												"type": "text/javascript",
+												"id": "382c63cd-c31d-4447-b77d-905ea0542b9f"
+											}
+										}
+									],
+									"id": "f1075aad-32e8-4fd4-9c40-0feb234792a1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{supplyDraft}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/provideTemplate?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"provideTemplate"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "параметры измененной приемки Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonObject = pm.response.json();\r",
+													"var jsonObjectAsString = JSON.stringify(jsonObject);\r",
+													"pm.collectionVariables.set(\"supplyDraft\", jsonObjectAsString);\r",
+													"jsonObject.paymentType = 2;\r",
+													"jsonObject.accountId = (pm.collectionVariables.get(\"supplyPaymetnScoreId\"));\r",
+													"pm.collectionVariables.set(\"supplyDraft\", JSON.stringify(jsonObject));\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "e1863f93-26d4-4b0b-97ee-679e943688aa"
+											}
+										}
+									],
+									"id": "d176097a-b8b2-47a8-b566-a5f984d5eab3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/{{draftSupplyId}}?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"{{draftSupplyId}}"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "unprovide supply",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "db8e724e-78ee-4353-b593-13c6deed9eda"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"id": "9a02b2fc-23a8-41ef-8607-1fac6cb11a9f"
+											}
+										}
+									],
+									"id": "ef3f7b71-769c-4585-b4d7-f3c91fbcfba2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{{supplyDraft}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/unprovide?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"unprovide"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete draft supply",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "c628e09c-af5e-4697-8bd7-b1d09267a27f"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"// var jsonObject = pm.response.json();\r",
+													"// var jsonObjectAsString = JSON.stringify(jsonObject);\r",
+													"// pm.collectionVariables.set(\"supplyDraft\", jsonObjectAsString);\r",
+													"\r",
+													"\r",
+													"// jsonObject.SDASnAME = 1100\r",
+													"\r",
+													"// var jsonString = JSON.stringify(jsonObject);\r",
+													"\r",
+													"// delete jsonObject.amount;\r",
+													"// var newVar = JSON.parse(\"supplyDraft\");\r",
+													"// newVar = (pm.supplyDraft)\r",
+													"// pm.collectionVariables.set(\"supplyDraft\", JSON.stringify(newVar));"
+												],
+												"type": "text/javascript",
+												"id": "6ef28189-5fe8-47c6-a391-216a513cf43f"
+											}
+										}
+									],
+									"id": "9dcd15c1-42d2-4f40-8bd4-1813eef91127",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"time\": \"2022-06-13T13:52:00.000Z\",\r\n    \"amount\": 16500,\r\n    \"paymentType\": 2,\r\n    \"payment\": 0,\r\n    \"supplyProducts\": [\r\n        {\r\n            \"isDisabledSellingPrice\": false,\r\n            \"isVisiblePriceBefore\": false,\r\n            \"isVisibleOldSellingPrice\": false,\r\n            \"__markupOrigin\": 0,\r\n            \"productDetail\": {\r\n                \"productUnits\": [],\r\n                \"product\": {\r\n                    \"measure\": 0,\r\n                    \"type\": 0,\r\n                    \"auxAttrTypeID\": 2,\r\n                    \"id\": 127239894,\r\n                    \"storeGroupId\": 13692,\r\n                    \"code\": \"4607125989348\",\r\n                    \"barcode\": 4607125989348,\r\n                    \"name\": \"Туба обычная\",\r\n                    \"editTime\": \"2022-06-13T19:52:13+0600\",\r\n                    \"categoryId\": 1540293,\r\n                    \"subCategoryId\": null,\r\n                    \"isDeleted\": false\r\n                },\r\n                \"additionalCodes\": [],\r\n                \"arrivalCost\": 1100,\r\n                \"sellingPrice\": 1100,\r\n                \"wholesalePrice\": 0,\r\n                \"markup\": 0,\r\n                \"packages\": [],\r\n                \"isPackage\": false,\r\n                \"isService\": false,\r\n                \"additionalExpense\": null,\r\n                \"storeId\": 15955,\r\n                \"barcode\": 4607125989348,\r\n                \"productId\": 127239894,\r\n                \"isHiddenOnScale\": false,\r\n                \"numberOnScale\": null,\r\n                \"editTime\": \"2022-06-13T19:52:12+0600\",\r\n                \"stockQuantity\": 186\r\n            },\r\n            \"id\": 387604986,\r\n            \"supply\": {\r\n                \"id\": 23390382,\r\n                \"supplierId\": 1595592,\r\n                \"amount\": 16500,\r\n                \"comment\": null,\r\n                \"time\": \"2022-06-13T19:52:10+0600\",\r\n                \"paymentType\": 2,\r\n                \"type\": 0\r\n            },\r\n            \"storeId\": 15955,\r\n            \"productId\": 127239894,\r\n            \"barcode\": 4607125989348,\r\n            \"quantity\": 15,\r\n            \"price\": 1100,\r\n            \"time\": \"2022-06-13T13:52:10.000Z\",\r\n            \"discount\": 0,\r\n            \"priceBefore\": 1100,\r\n            \"arrivalCost\": 1100,\r\n            \"sellingPrice\": 1100,\r\n            \"type\": 0,\r\n            \"draftName\": \"Туба обычная\",\r\n            \"product\": {\r\n                \"auxAttrTypeID\": 2,\r\n                \"id\": 127239894,\r\n                \"storeGroupId\": 13692,\r\n                \"code\": \"4607125989348\",\r\n                \"barcode\": 4607125989348,\r\n                \"name\": \"Туба обычная\",\r\n                \"editTime\": \"2022-06-13T19:52:13+0600\",\r\n                \"categoryId\": 1540293,\r\n                \"subCategoryId\": null,\r\n                \"type\": 0,\r\n                \"measure\": 0,\r\n                \"isDeleted\": false\r\n            },\r\n            \"amount\": 16500,\r\n            \"oldSellingPrice\": 1100,\r\n            \"sellingPriceCopy\": 1100,\r\n            \"rowId\": 0,\r\n            \"oldMarkup\": 0\r\n        }\r\n    ],\r\n    \"bonusProducts\": [],\r\n    \"overdueProducts\": [],\r\n    \"id\": 23390382,\r\n    \"supplierId\": 1595592,\r\n    \"comment\": null,\r\n    \"type\": 0,\r\n    \"supplier\": \"поставщик который поставщик (Поставщик)\",\r\n    \"supplierName\": \"поставщик который поставщик\",\r\n    \"fTime\": null,\r\n    \"user\": \"Владимир\",\r\n    \"account\": null,\r\n    \"debt\": null,\r\n    \"paidAmount\": null,\r\n    \"sellingAmount\": null,\r\n    \"arrivalAmount\": null,\r\n    \"forfeit\": null,\r\n    \"isBindProductToSupplier\": true,\r\n    \"isSellingPriceChangeable\": true,\r\n    \"isSumSameProducts\": true,\r\n    \"isRestoreDeletedProducts\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/removeTemplate/{{draftSupplyId}}?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"removeTemplate",
+												"{{draftSupplyId}}"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "f5d792b4-0ecb-4453-8bb2-054b73336fbf"
+						},
+						{
+							"name": "Быстрая приемка",
+							"item": [
+								{
+									"name": "Данные счетов 1 Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"supplyPaymetnScoreId\", pm.response.json().accounts[0].id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "28771159-5d2e-4ab7-84c6-91cb421c0832"
+											}
+										}
+									],
+									"id": "5c45e1cc-3355-42b0-ac11-4637842dd373",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/org/account/list?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"org",
+												"account",
+												"list"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Список поставщиков Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"supplierId\", pm.response.json()[0].id);\r",
+													"pm.collectionVariables.set(\"supplierName\", pm.response.json()[0].name);\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "d15bcb6c-2a04-44cb-a548-2d025a465f3a"
+											}
+										}
+									],
+									"id": "e6e03a77-24f0-440b-b55e-f57f80419f0b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/org/agent/list-agent-names?agentType=SUPPLIER&storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"org",
+												"agent",
+												"list-agent-names"
+											],
+											"query": [
+												{
+													"key": "agentType",
+													"value": "SUPPLIER"
+												},
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "создание быстрой приемки",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"console.log(pm.response.json().id);\r",
+													"pm.collectionVariables.set(\"fastSupplyId\", pm.response.json().id);\r",
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "2dd02b11-ade4-4fe7-85b3-f0620f59c46e"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"isoTimestampNow\", Date.now()-2000);\r",
+													""
+												],
+												"type": "text/javascript",
+												"id": "309ade95-41f9-47f3-b854-bfdbbb407dfb"
+											}
+										}
+									],
+									"id": "25894e92-0205-4bb2-ad61-617525b93d75",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"time\": \"{{isoTimestampNow}}\",\r\n    \"amount\": \"1000\",\r\n    \"paymentType\": 0,\r\n    \"payment\": 0,\r\n    \"supplyProducts\": [],\r\n    \"bonusProducts\": [],\r\n    \"overdueProducts\": [],\r\n    \"type\": 1,\r\n    \"supplierId\": {{supplierId}},\r\n    \"accountId\": {{supplyPaymetnScoreId}},\r\n    \"consignmentComment\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/create?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"create"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Данные товара(безЦены) Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"dataOfProduct\", JSON.stringify(pm.response.json().product));\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"pm.collectionVariables.set(\"stockQuantity\", pm.response.json().stockQuantity);"
+												],
+												"type": "text/javascript",
+												"id": "24d1447c-523c-47e3-8c7e-7adacc235198"
+											}
+										}
+									],
+									"id": "b17a6235-335d-412b-b517-b92fcd3eb03c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/nom/product/findProductByBarcode?showServices=false&showPackages=false&showDeleted=true&barcode={{allBarcode}}&create=true&storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"nom",
+												"product",
+												"findProductByBarcode"
+											],
+											"query": [
+												{
+													"key": "showServices",
+													"value": "false"
+												},
+												{
+													"key": "showPackages",
+													"value": "false"
+												},
+												{
+													"key": "showDeleted",
+													"value": "true"
+												},
+												{
+													"key": "barcode",
+													"value": "{{allBarcode}}"
+												},
+												{
+													"key": "create",
+													"value": "true"
+												},
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Данные товара(сЦенами) Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"let category = pm.response.json().category;\r",
+													"if(category !== null ) {\r",
+													"    pm.collectionVariables.set(\"dataOfCategory\", JSON.stringify(pm.response.json().category));\r",
+													"\r",
+													"\r",
+													"    let subCategory = pm.response.json().subCategory;\r",
+													"    if(subCategory !== null) {\r",
+													"        pm.collectionVariables.set(JSON.stringify(\"dataOfSubCategory\", JSON.stringify(pm.response.json().subCategory)));\r",
+													"    }else{\r",
+													"        pm.collectionVariables.set(\"dataOfSubCategory\", JSON.stringify({\"id\":null}));\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"pm.collectionVariables.set(\"supplyProductId\", pm.response.json().productInfo.id);\r",
+													"pm.collectionVariables.set(\"supplyArrivalCostProductPrise\", pm.response.json().productPrice.arrivalCost);\r",
+													"pm.collectionVariables.set(\"supplySellingPriceProductPrise\", pm.response.json().productPrice.sellingPrice);\r",
+													"pm.collectionVariables.set(\"supplyWholesalePriceProductPrice\", pm.response.json().productPrice.wholesalePrice);\r",
+													"\r",
+													"var supplyArrivalCostProduct = parseFloat(pm.response.json().productPrice.arrivalCost);\r",
+													"var supplySellingPriceProduct = parseInt(pm.response.json().productPrice.sellingPrice);\r",
+													"\r",
+													"var amountMarkup = supplySellingPriceProduct - supplyArrivalCostProduct;\r",
+													"var onePercent = supplyArrivalCostProduct / 100;\r",
+													"var percentMarkup = amountMarkup / onePercent;\r",
+													"pm.collectionVariables.set(\"percentMarkup\", percentMarkup);\r",
+													"\r",
+													"var quantityProduct = 1;\r",
+													"pm.collectionVariables.set(\"quantityProduct\", quantityProduct);\r",
+													"var supplyAmount = supplyArrivalCostProduct * quantityProduct;\r",
+													"\r",
+													"pm.collectionVariables.set(\"supplyAmount\", supplyAmount);\r",
+													"\r",
+													"var newQuantityProduct = 10;\r",
+													"var newSupplyArrivalCostProduct = supplyArrivalCostProduct + 10;\r",
+													"var supplySumMarkup = (newSupplyArrivalCostProduct / 100) * percentMarkup;\r",
+													"var newSupplySellingPriceProduct = newSupplyArrivalCostProduct + supplySumMarkup;\r",
+													"var newSupplyAmount = newSupplyArrivalCostProduct * newQuantityProduct;\r",
+													"pm.collectionVariables.set(\"newQuantityProduct\", newQuantityProduct);\r",
+													"pm.collectionVariables.set(\"newSupplyAmount\", newSupplyAmount);\r",
+													"pm.collectionVariables.set(\"newSupplyArrivalCostProduct\", newSupplyArrivalCostProduct);\r",
+													"pm.collectionVariables.set(\"newSupplySellingPriceProduct\", newSupplySellingPriceProduct);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"id": "7fc44a59-7839-49b2-b22b-73b41ba20752"
+											}
+										}
+									],
+									"id": "2f206151-6df0-46af-bdc1-712d521f26cb",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/rest/cabinet/nom/product/{{allBarcode}}?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"nom",
+												"product",
+												"{{allBarcode}}"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Проведение быстрой приемки с товарами",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7e4dcc95-bd5d-4b15-aa2e-2c193441d695",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "c2acb8eb-6c9b-434b-b52d-422757eba5f2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"time\": \"{{$isoTimestamp}}\",\r\n    \"amount\": {{supplyAmount}},\r\n    \"paymentType\": 0,\r\n    \"payment\": 1000,\r\n    \"supplyProducts\": [\r\n        {\r\n            \"isDisabledSellingPrice\": false,\r\n            \"isVisiblePriceBefore\": false,\r\n            \"isVisibleOldSellingPrice\": false,\r\n            \"__markupOrigin\": {{percentMarkup}},\r\n            \"productDetail\": {\r\n                \"productUnits\": [],\r\n                \"product\": {{dataOfProduct}},\r\n                \"additionalCodes\": [],\r\n                \"arrivalCost\": {{supplyArrivalCostProductPrise}},\r\n                \"sellingPrice\": {{supplySellingPriceProductPrise}},\r\n                \"wholesalePrice\": {{supplyWholesalePriceProductPrice}},\r\n                \"markup\": {{percentMarkup}},\r\n                \"packages\": [],\r\n                \"isPackage\": false,\r\n                \"isService\": false,\r\n                \"additionalExpense\": null,\r\n                \"storeId\": {{StoreId}},\r\n                \"productId\": {{supplyProductId}},\r\n                \"isHiddenOnScale\": false,\r\n                \"numberOnScale\": null,\r\n                \"stockQuantity\": {{stockQuantity}},\r\n                \"category\": {{dataOfCategory}},\r\n                \"subCategory\": {{dataOfSubCategory}}\r\n            },\r\n            \"quantity\": {{quantityProduct}},\r\n            \"arrivalCost\": {{supplyArrivalCostProductPrise}},\r\n            \"priceBefore\": {{supplySellingPriceProductPrise}},\r\n            \"oldArrivalCost\": {{supplyArrivalCostProductPrise}},\r\n            \"discount\": 0,\r\n            \"sellingPrice\": {{supplySellingPriceProductPrise}},\r\n            \"oldSellingPrice\": {{supplySellingPriceProductPrise}},\r\n            \"sellingPriceCopy\": {{supplySellingPriceProductPrise}},\r\n            \"rowId\": 0,\r\n            \"price\": {{supplyArrivalCostProductPrise}},\r\n            \"amount\": {{supplyAmount}},\r\n            \"oldAmount\": {{supplyAmount}},\r\n            \"oldMarkup\": 0\r\n        }\r\n    ],\r\n    \"bonusProducts\": [],\r\n    \"overdueProducts\": [],\r\n    \"id\": {{fastSupplyId}},\r\n    \"supplierId\": {{supplierId}},\r\n    \"comment\": null,\r\n    \"type\": 1,\r\n    \"supplier\": \"{{supplierName}}\",\r\n    \"supplierName\": \"{{supplierName}}\",\r\n    \"fTime\": null,\r\n    \"user\": \"{{firstName}}\",\r\n    \"account\": null,\r\n    \"debt\": null,\r\n    \"paidAmount\": null,\r\n    \"sellingAmount\": null,\r\n    \"arrivalAmount\": null,\r\n    \"forfeit\": null,\r\n    \"isBindProductToSupplier\": true,\r\n    \"isSellingPriceChangeable\": true,\r\n    \"isSumSameProducts\": true,\r\n    \"isRestoreDeletedProducts\": false,\r\n    \"isSupplyChange\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rest/cabinet/opr/supplies/edit?storeId={{StoreId}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rest",
+												"cabinet",
+												"opr",
+												"supplies",
+												"edit"
+											],
+											"query": [
+												{
+													"key": "storeId",
+													"value": "{{StoreId}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "ddea5d20-a624-441e-b461-385a5877501c"
+						}
+					],
+					"id": "37e211c0-554c-477e-9306-80a1347caea3"
+				}
+			],
+			"id": "dd9d0cdb-0c1a-4ae9-9257-c27806479772"
 		}
 	],
 	"event": [
@@ -1722,153 +3115,243 @@
 	],
 	"variable": [
 		{
-			"id": "7d9e2dac-4209-4670-b276-72e85fb61781",
+			"id": "5a7e5f2d-bec3-42b5-94dd-5865e713b989",
 			"key": "type",
 			"value": ""
 		},
 		{
-			"id": "186682d5-79e2-4c94-947e-4efaa7997d34",
+			"id": "6232bc77-7c86-4f69-a5d7-d1936b16acbe",
 			"key": "barcode",
 			"value": ""
 		},
 		{
-			"id": "808dce23-8a0b-402e-8b1a-b25ce20fc1a1",
+			"id": "0c2ea038-e2cf-4577-b393-e8f11ed9cb15",
 			"key": "posId",
 			"value": ""
 		},
 		{
-			"id": "a7dd4100-9610-4434-8bae-ba8dbc9dc242",
+			"id": "b1dedb4b-f45f-40e4-9ce5-c4db3c0059ac",
 			"key": "currentDate",
 			"value": ""
 		},
 		{
-			"id": "7afb291f-20a0-4545-822e-500413c66703",
+			"id": "35195f7d-1036-4874-8d9b-089bed39cb33",
 			"key": "dateMonthAgo",
 			"value": ""
 		},
 		{
-			"id": "e0b42fac-9af0-4690-b7b1-dbd643b24834",
+			"id": "1fff0e14-1fb3-4b2c-a7a8-39d7b5fdcb55",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "6fdb64aa-d10a-432f-ac47-4acd9b3cdfb7",
+			"id": "a2b3b4d9-9cab-43fe-b4c3-53a847be2e43",
 			"key": "saleProductBarcode",
 			"value": ""
 		},
 		{
-			"id": "9bf8451a-7b13-4f6e-b4bb-186be9d113ba",
+			"id": "2575124e-332b-4070-b933-25b8d19dc212",
 			"key": "sellingPriceSaleProduct",
 			"value": ""
 		},
 		{
-			"id": "41216355-3f4d-4b01-b929-04be936282b5",
+			"id": "7e7751bc-c0f8-45e8-8ef2-fc5d7808a91c",
 			"key": "quantitySaleProduct",
 			"value": ""
 		},
 		{
-			"id": "08b3feb6-72af-466d-bf7d-ac222ce98da9",
+			"id": "7d4de110-cb8c-40e3-ae5d-fbfb11e0a58c",
 			"key": "amountSale",
 			"value": ""
 		},
 		{
-			"id": "b16cc7d7-33ab-4ccc-8c17-eede424e8fe6",
+			"id": "6ef3559f-ff23-498c-8936-c6c7585c93ea",
 			"key": "scorePaymentSale",
 			"value": ""
 		},
 		{
-			"id": "b8244d45-db82-4152-aa13-3eb7afdbe33c",
+			"id": "1456c585-ec65-487f-898e-b5be9aa88812",
 			"key": "isoTimestampNow",
 			"value": ""
 		},
 		{
-			"id": "0047b935-0a89-47ae-a6da-221ed26c700e",
+			"id": "7928e9f4-51c3-4d6a-902a-efd1bbb6e0e0",
 			"key": "saleId",
 			"value": ""
 		},
 		{
-			"id": "fffeb6dd-84ef-4982-82ce-26e7e2b9eead",
+			"id": "4d93fa1d-ff13-4df9-9d12-bf6beb6793a2",
 			"key": "saleReceiptNo",
 			"value": ""
 		},
 		{
-			"id": "08655701-40be-46ac-8f6f-bc49dcab059e",
+			"id": "8115911b-1ab4-4671-bf63-49a082aea508",
 			"key": "salePosId",
 			"value": ""
 		},
 		{
-			"id": "6bc2eb52-6a84-4d52-a0b4-3e05e5d8f8d7",
+			"id": "92f7af69-b92f-4739-bcbb-b753ee485bd8",
 			"key": "newQuantitySaleProduct",
 			"value": ""
 		},
 		{
-			"id": "ddebfea9-85b1-482c-812a-8e3bc5c2fb00",
+			"id": "6015a42f-35ec-4096-a5dc-c44365edcce8",
 			"key": "newSaleAmount",
 			"value": ""
 		},
 		{
-			"id": "d32b26a5-69b9-4243-923b-6d882de95e06",
+			"id": "d03435e4-993b-4add-8a99-188c39da55b5",
 			"key": "saleCustomerId",
 			"value": ""
 		},
 		{
-			"id": "527bdab8-83ae-462e-b05a-88e56edd5428",
+			"id": "396369a4-cad8-4ca7-91b1-96be8d4db4ca",
 			"key": "refundProductBarcode",
 			"value": ""
 		},
 		{
-			"id": "fb15de1e-49dd-4536-8a08-ef4e888b8e44",
+			"id": "2d40d372-3d72-4d52-8b65-bc47d2264391",
 			"key": "sellingPriceRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "0947a429-5bad-40d2-9859-07f0b751a88f",
+			"id": "636650e3-2f94-459d-9c4a-6b2daee8e4ec",
 			"key": "quantityRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "ec281931-36e9-4f8f-8823-e0f948badee6",
+			"id": "41c76500-bde2-445d-b6db-3686caec1054",
 			"key": "amountRefund",
 			"value": ""
 		},
 		{
-			"id": "5c950200-bdf8-4ddf-8d46-06c63a79cdca",
+			"id": "aa5a4fa2-bfa5-44c9-9444-cd8739df8e57",
 			"key": "scorePaymentRefund",
 			"value": ""
 		},
 		{
-			"id": "d34366c0-e325-470d-b5b0-6fc6a99f36cf",
+			"id": "e0097c37-84bf-49bc-b426-049a0289f95d",
 			"key": "timestampNow",
 			"value": ""
 		},
 		{
-			"id": "9b192bc9-1da6-436d-a15b-479479aa774b",
+			"id": "875cdf80-cc3b-4a4e-a1b1-4ad72b07fb7c",
 			"key": "refundId",
 			"value": ""
 		},
 		{
-			"id": "f7afd3a4-1b73-410a-a565-db470c7fd62b",
+			"id": "abef598c-ff16-4c3f-8027-a76379b8fcf8",
 			"key": "refundCashierId",
 			"value": ""
 		},
 		{
-			"id": "b031e0c5-7f74-49ae-8183-af2ea5fd6fed",
+			"id": "a87d9d12-07b9-44b2-8a29-a51ce303da64",
 			"key": "refundPosId",
 			"value": ""
 		},
 		{
-			"id": "74655ee7-10e6-494b-87d0-a8ccd20877c1",
+			"id": "378489d2-1d4a-4149-a014-ad3d27b516ed",
 			"key": "newQuantityRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "8f9cbd2e-19f5-40f0-95a9-f5136462849c",
+			"id": "8275e489-d7ba-4135-a594-024cce5c4c5c",
 			"key": "newAmountRefund",
 			"value": ""
 		},
 		{
-			"id": "2dd015ca-4b5b-4149-9080-46ec3d4b53e8",
+			"id": "0cb3b8f3-e4ec-4967-b84a-3ee73b15d771",
 			"key": "refundSaleId",
+			"value": ""
+		},
+		{
+			"id": "adb4771a-1539-480f-ae9a-65f541ca433d",
+			"key": "allBarcode",
+			"value": ""
+		},
+		{
+			"id": "3f5d987d-942a-4d32-9699-22a5b2df56f7",
+			"key": "supplyPaymetnScoreId",
+			"value": ""
+		},
+		{
+			"id": "5828511d-51a6-4518-b962-d64527089bd5",
+			"key": "supplierId",
+			"value": ""
+		},
+		{
+			"id": "9de61853-70a1-42b0-9705-26fe18058cca",
+			"key": "dataOfProduct",
+			"value": ""
+		},
+		{
+			"id": "5c21aaa0-5e9d-4d3c-a8b0-8506754a2563",
+			"key": "stockQuantity",
+			"value": ""
+		},
+		{
+			"id": "bd55d952-e064-4f3f-b296-76518bfbee1c",
+			"key": "dataOfCategory",
+			"value": ""
+		},
+		{
+			"id": "cf563329-9538-46bd-9fcb-eb960de56728",
+			"key": "dataOfSubCategory",
+			"value": ""
+		},
+		{
+			"id": "4bcd4c61-e4e3-4dad-b3b5-162ce3e6185f",
+			"key": "supplyProductId",
+			"value": ""
+		},
+		{
+			"id": "9320b446-5003-472f-beab-2f6316838420",
+			"key": "supplyArrivalCostProductPrise",
+			"value": ""
+		},
+		{
+			"id": "ede32d88-30f9-4592-9940-e53f9cd750a0",
+			"key": "supplySellingPriceProductPrise",
+			"value": ""
+		},
+		{
+			"id": "5224475d-d03d-4949-8305-c5b3b891219d",
+			"key": "supplyWholesalePriceProductPrice",
+			"value": ""
+		},
+		{
+			"id": "cdee2102-e782-4726-9efe-fcb47f6e38e4",
+			"key": "percentMarkup",
+			"value": ""
+		},
+		{
+			"id": "bcd4f5d5-b483-46a4-becd-81f1c68c439d",
+			"key": "quantityProduct",
+			"value": ""
+		},
+		{
+			"id": "dee872c2-0006-4703-a0b5-925f69ab76ab",
+			"key": "supplyAmount",
+			"value": ""
+		},
+		{
+			"id": "c874709e-79ac-4424-8394-7c586a82a945",
+			"key": "newQuantityProduct",
+			"value": ""
+		},
+		{
+			"id": "12f6aba3-e654-4580-8c86-8f53448b821e",
+			"key": "newSupplyAmount",
+			"value": ""
+		},
+		{
+			"id": "526f0fb2-c229-45f0-aa40-661be0017d45",
+			"key": "newSupplyArrivalCostProduct",
+			"value": ""
+		},
+		{
+			"id": "d028a23c-1d15-44bb-9e05-aa3f8993150a",
+			"key": "newSupplySellingPriceProduct",
 			"value": ""
 		}
 	]
