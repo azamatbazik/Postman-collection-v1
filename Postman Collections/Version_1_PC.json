@@ -4287,5 +4287,102 @@
 				]
 			}
 		}
+	],
+	"variable": [
+		{
+			"id": "6fa179b4-59c1-4d74-b379-1bbffb62d4a9",
+			"key": "type",
+			"value": ""
+		},
+		{
+			"id": "56b8567e-633a-44ac-97c7-2a9d4c481fa9",
+			"key": "allBarcode",
+			"value": ""
+		},
+		{
+			"id": "0d28e2d4-0fd2-43d1-840b-6da9ba50e194",
+			"key": "supplyPaymetnScoreId",
+			"value": ""
+		},
+		{
+			"id": "653314b6-59b5-41f5-83a0-9bdfb22cd6dd",
+			"key": "supplierId",
+			"value": ""
+		},
+		{
+			"id": "0d7aa5e1-8c84-4b58-9bbe-31f09409bdbe",
+			"key": "dataOfProduct",
+			"value": ""
+		},
+		{
+			"id": "6927de47-43b8-4dbc-bad7-57597117daca",
+			"key": "stockQuantity",
+			"value": ""
+		},
+		{
+			"id": "855b7391-fd4a-40b4-8dfa-a43ac83767bc",
+			"key": "dataOfCategory",
+			"value": ""
+		},
+		{
+			"id": "09b18093-5d93-433a-a483-80895c7a49ee",
+			"key": "\"dataOfSubCategory\"",
+			"value": ""
+		},
+		{
+			"id": "f81378ac-0273-44b2-a858-e7e7a77a3fa3",
+			"key": "supplyProductId",
+			"value": ""
+		},
+		{
+			"id": "be0fc48a-8b31-4f29-8ea9-634c7d2843da",
+			"key": "supplyArrivalCostProductPrise",
+			"value": ""
+		},
+		{
+			"id": "4b110dd7-68b6-40ba-9291-57561bbd7a1f",
+			"key": "supplySellingPriceProductPrise",
+			"value": ""
+		},
+		{
+			"id": "61bc630c-f8c4-4c2f-9593-09666286eacb",
+			"key": "supplyWholesalePriceProductPrice",
+			"value": ""
+		},
+		{
+			"id": "c23a4aa1-cb08-4b4a-9ca4-8d5fc3a33789",
+			"key": "percentMarkup",
+			"value": ""
+		},
+		{
+			"id": "b4397bcf-c448-4554-b50f-19cee75556b1",
+			"key": "quantityProduct",
+			"value": ""
+		},
+		{
+			"id": "c297ff36-6780-433d-b834-0588f9feef60",
+			"key": "supplyAmount",
+			"value": ""
+		},
+		{
+			"id": "d3e796ec-3e53-41a1-9c3e-f0b1b722644e",
+			"key": "newQuantityProduct",
+			"value": ""
+		},
+		{
+			"id": "4c1041ba-9235-4b4a-9d36-9ad69450867e",
+			"key": "newSupplyAmount",
+			"value": ""
+		},
+		{
+			"id": "d0208a48-c8d1-4469-8279-97da0856f6fd",
+			"key": "newSupplyArrivalCostProduct",
+			"value": ""
+		},
+		{
+			"id": "e5cf4485-d6f8-4fb9-a580-331c5c50e289",
+			"key": "newSupplySellingPriceProduct",
+			"value": ""
+		}
 	]
 }
