@@ -33,7 +33,7 @@
 									"script": {
 										"id": "3ae02380-ce1f-4cd8-aeac-e5af23ca0122",
 										"exec": [
-											"// pm.collectionVariables.set(\"type\", 1);"
+											"pm.collectionVariables.set(\"type\", 1);"
 										],
 										"type": "text/javascript"
 									}
