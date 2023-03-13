@@ -4278,5 +4278,37 @@
 				]
 			}
 		}
+	],
+	"variable": [
+		{
+			"id": "e3ff63eb-3e85-4b06-a438-534ee8eefb86",
+			"key": "type",
+			"value": ""
+		},
+		{
+			"id": "8c4f8dbd-b87a-4830-9da2-3aaee00b2e60",
+			"key": "barcode",
+			"value": ""
+		},
+		{
+			"id": "8af2e4d6-05e1-4cb2-8aeb-380bab9720b3",
+			"key": "posId",
+			"value": ""
+		},
+		{
+			"id": "dd385cae-c7e8-4fd3-a12d-51dd96b722a8",
+			"key": "currentDate",
+			"value": ""
+		},
+		{
+			"id": "e275ef67-fc85-40df-8c59-bcf012773746",
+			"key": "dateMonthAgo",
+			"value": ""
+		},
+		{
+			"id": "ab0eaf1e-1358-4e42-a50d-90900958e865",
+			"key": "userId",
+			"value": ""
+		}
 	]
 }
