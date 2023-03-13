@@ -4257,7 +4257,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "077fb803-cff7-479a-a92b-e696674aea65",
+				"id": "d14cdbe4-ab64-4985-bd4b-250d737f8aba",
 				"type": "text/javascript",
 				"exec": [
 					"pm.request.headers.add({",
@@ -4280,114 +4280,12 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0331377e-5bb6-4e17-80fa-4dc3d3965172",
+				"id": "b1cbbc67-e52e-4b56-ab68-b469b2cb32a8",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"id": "77b37419-a6da-4bbf-be82-1ae8c2118c0c",
-			"key": "type",
-			"value": ""
-		},
-		{
-			"id": "ce350c03-6392-4705-b722-cc88ac2dd632",
-			"key": "allBarcode",
-			"value": ""
-		},
-		{
-			"id": "2f720714-36b4-44f7-8f78-3cb32b0b56bc",
-			"key": "supplyPaymetnScoreId",
-			"value": ""
-		},
-		{
-			"id": "ef48d0b2-4f42-4a00-a2c4-b1a5084f2122",
-			"key": "supplierId",
-			"value": ""
-		},
-		{
-			"id": "3accd658-139e-4bc0-9816-685c576ba85c",
-			"key": "dataOfProduct",
-			"value": ""
-		},
-		{
-			"id": "eb008d95-2abb-493c-adfd-7fc45efd8b3b",
-			"key": "stockQuantity",
-			"value": ""
-		},
-		{
-			"id": "ce7e6857-d4eb-4b36-b20e-fb46d803be52",
-			"key": "dataOfCategory",
-			"value": ""
-		},
-		{
-			"id": "ec1cef41-43e2-4009-a9a1-d7dd86cbeed5",
-			"key": "\"dataOfSubCategory\"",
-			"value": ""
-		},
-		{
-			"id": "e444aceb-ffee-439e-9c47-43ad7addc00c",
-			"key": "supplyProductId",
-			"value": ""
-		},
-		{
-			"id": "2ae4be2b-5d72-45a4-8159-c8b3ffbe0be6",
-			"key": "supplyArrivalCostProductPrise",
-			"value": ""
-		},
-		{
-			"id": "e81cdbab-8ffc-4efd-abfa-a973435f17d2",
-			"key": "supplySellingPriceProductPrise",
-			"value": ""
-		},
-		{
-			"id": "30bddeeb-0874-44a7-8336-8a2e1d812dab",
-			"key": "supplyWholesalePriceProductPrice",
-			"value": ""
-		},
-		{
-			"id": "54ffc8ab-b327-4843-92da-48d0224ae6f5",
-			"key": "percentMarkup",
-			"value": ""
-		},
-		{
-			"id": "32913d4f-2681-4783-9c13-5c7108e19a36",
-			"key": "quantityProduct",
-			"value": ""
-		},
-		{
-			"id": "66ac474c-9acd-4034-b6c5-f72da539e4d9",
-			"key": "supplyAmount",
-			"value": ""
-		},
-		{
-			"id": "80f92a4b-740e-4d97-b16e-97b0bb2dd0a3",
-			"key": "newQuantityProduct",
-			"value": ""
-		},
-		{
-			"id": "249807db-7151-43fd-910b-40e941c8f049",
-			"key": "newSupplyAmount",
-			"value": ""
-		},
-		{
-			"id": "0bffd932-2fb3-421d-8ca8-6245834c1876",
-			"key": "newSupplyArrivalCostProduct",
-			"value": ""
-		},
-		{
-			"id": "2dbed5f1-1e06-42bb-b0d7-4a91e3c7cd35",
-			"key": "newSupplySellingPriceProduct",
-			"value": ""
-		},
-		{
-			"id": "bfc08c72-ba74-4c8e-88af-72bfb8687ccd",
-			"key": "isoTimestampNow",
-			"value": ""
 		}
 	]
 }
