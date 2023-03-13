@@ -1719,7 +1719,9 @@
 													"//     if(pm.iterationData === 3|4){\r",
 													"//         pm.stopIteration(\"Type product is not validate!\")\r",
 													"//     }\r",
-													"// })"
+													"// })\r",
+													"\r",
+													"pm.collectionVariables.set(\"type\", 0);"
 												],
 												"type": "text/javascript"
 											}
