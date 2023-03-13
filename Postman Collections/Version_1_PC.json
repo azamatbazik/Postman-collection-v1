@@ -4294,242 +4294,242 @@
 	],
 	"variable": [
 		{
-			"id": "1153c71e-b8f4-4134-9cdd-3b55f166f896",
+			"id": "248c60b9-d7a0-411c-8fb1-a8382c995aba",
 			"key": "type",
 			"value": ""
 		},
 		{
-			"id": "d743d73e-15f2-420f-bdf9-df94f8d19154",
+			"id": "f3d180d4-7daf-44ae-b685-2314515fff6f",
 			"key": "allBarcode",
 			"value": ""
 		},
 		{
-			"id": "2b057644-b480-4a68-86c0-7391af716c09",
+			"id": "16a42cab-9168-4c43-ab07-7a4c37fe0341",
 			"key": "supplyPaymetnScoreId",
 			"value": ""
 		},
 		{
-			"id": "405f1215-921c-467d-b037-9713a5f3fe99",
+			"id": "ed31d60d-d86b-4b26-9588-62a0f1d734b2",
 			"key": "supplierId",
 			"value": ""
 		},
 		{
-			"id": "60742ad7-2e18-4f63-9baa-a4ba3e6b74bb",
+			"id": "8176cd22-a4f1-41d5-8bc2-f3f30ee6e6ce",
 			"key": "dataOfProduct",
 			"value": ""
 		},
 		{
-			"id": "e147e6b8-c9f7-4b0e-9711-15457a2c10d7",
+			"id": "c36748e0-3e0a-45c8-8631-b85d88e2d6b0",
 			"key": "stockQuantity",
 			"value": ""
 		},
 		{
-			"id": "8cc38a28-ecc0-4c6f-b88d-5a3cf1582f0b",
+			"id": "d62b56da-7593-4c20-bfc6-1bd2c2ffe96e",
 			"key": "dataOfCategory",
 			"value": ""
 		},
 		{
-			"id": "ecf1f909-f67c-4559-ac73-426caba30745",
+			"id": "d0115349-5ccd-4110-8cab-b1b54384e20f",
 			"key": "\"dataOfSubCategory\"",
 			"value": ""
 		},
 		{
-			"id": "a3178577-4a42-4508-8321-53bcb54b291d",
+			"id": "b852712c-f469-471c-81f8-6aaa28a68679",
 			"key": "supplyProductId",
 			"value": ""
 		},
 		{
-			"id": "81fb8950-2224-41cd-a0b9-c15ffabc540f",
+			"id": "9d676b49-0976-4511-9ac0-fe6aa8dea489",
 			"key": "supplyArrivalCostProductPrise",
 			"value": ""
 		},
 		{
-			"id": "111857a7-d221-439c-9620-07d068162288",
+			"id": "80c2e00f-7c41-456b-89aa-7affae3e41ef",
 			"key": "supplySellingPriceProductPrise",
 			"value": ""
 		},
 		{
-			"id": "65e19fe0-049a-43da-8274-e606b1163759",
+			"id": "f5ff0b92-4f0a-437b-9387-5e7b8ef63efc",
 			"key": "supplyWholesalePriceProductPrice",
 			"value": ""
 		},
 		{
-			"id": "732fcbce-6081-4c3c-87f3-73a59ce459eb",
+			"id": "fe9d2a0a-0e1c-427f-97c9-f0af23a2142e",
 			"key": "percentMarkup",
 			"value": ""
 		},
 		{
-			"id": "2b172f50-3bd4-437b-b4ab-368d2609082e",
+			"id": "062426c1-3a8e-46b2-8c2b-a4ffe659a2ff",
 			"key": "quantityProduct",
 			"value": ""
 		},
 		{
-			"id": "5386b659-9cab-4c16-9983-c41f10fc9d30",
+			"id": "bfd9a12f-9970-44b4-be89-6606212892f1",
 			"key": "supplyAmount",
 			"value": ""
 		},
 		{
-			"id": "e0b51396-4a6c-4132-8487-451cfb013a13",
+			"id": "e1205e02-4143-49e8-a641-de9311f540d8",
 			"key": "newQuantityProduct",
 			"value": ""
 		},
 		{
-			"id": "ce198608-92ab-4131-a9f5-6749d7559dcc",
+			"id": "e5cbadf4-a8b8-497b-86ae-02cce40f8a79",
 			"key": "newSupplyAmount",
 			"value": ""
 		},
 		{
-			"id": "07468240-e126-4f9f-8ede-22f1e907d45f",
+			"id": "882ae59c-0c6a-4da5-a45f-b811905a4dc1",
 			"key": "newSupplyArrivalCostProduct",
 			"value": ""
 		},
 		{
-			"id": "e342f351-adf0-4777-8f61-2496a776f042",
+			"id": "1900acbf-ed40-4b80-b9af-2a2aad7107d3",
 			"key": "newSupplySellingPriceProduct",
 			"value": ""
 		},
 		{
-			"id": "1e4e7385-64a5-4388-8ecf-1555a05e8b19",
+			"id": "a77b8bae-15ec-4d49-bbdd-4c6d50f35517",
 			"key": "isoTimestampNow",
 			"value": ""
 		},
 		{
-			"id": "d0d864fc-0732-437f-8e66-844824d68d9e",
+			"id": "0cefdd8c-a6a9-464c-afa8-0d102e6e7d7a",
 			"key": "barcode",
 			"value": ""
 		},
 		{
-			"id": "c13a954a-e96e-4271-95e0-d039ffb3a9ad",
+			"id": "02ab8666-25f6-40d0-b47a-4caa5fc0a636",
 			"key": "posId",
 			"value": ""
 		},
 		{
-			"id": "6de14f47-24cd-40e5-a191-3627971a40f7",
+			"id": "b9b38da6-6759-4a2d-8241-f84021949f25",
 			"key": "currentDate",
 			"value": ""
 		},
 		{
-			"id": "4943f681-ce82-407c-b23e-c97ffa66505d",
+			"id": "c12e31a7-bea4-4bac-b2cf-ba56911d953b",
 			"key": "dateMonthAgo",
 			"value": ""
 		},
 		{
-			"id": "f900bec9-5d9a-4855-96f9-c78ec6fea8ab",
+			"id": "e7f2e3ad-6108-421a-9665-b3fabf73baf6",
 			"key": "userId",
 			"value": ""
 		},
 		{
-			"id": "8a310cf9-d4c1-4de0-bfcb-ffcd2ff17ce1",
+			"id": "2afda9e0-2586-49d8-93d3-1b4f41130a81",
 			"key": "saleProductBarcode",
 			"value": ""
 		},
 		{
-			"id": "63c1a597-9a46-411b-bf88-a473e69fb5f1",
+			"id": "f0bea975-d9d7-4fe5-8742-62e0f51e128d",
 			"key": "sellingPriceSaleProduct",
 			"value": ""
 		},
 		{
-			"id": "c9e76346-6129-4392-bec9-d80a48c46fc3",
+			"id": "414debb4-e3f4-4e6b-bf77-4562207af968",
 			"key": "quantitySaleProduct",
 			"value": ""
 		},
 		{
-			"id": "213fd96f-799a-4899-ad5e-5c7d61aacc0c",
+			"id": "fcda16dc-610c-4d51-a182-6feecfecfc72",
 			"key": "amountSale",
 			"value": ""
 		},
 		{
-			"id": "c82fc20d-7b0e-4727-9e06-0ee612e025b4",
+			"id": "1a6298b1-51c7-4def-8898-74722449d1f7",
 			"key": "scorePaymentSale",
 			"value": ""
 		},
 		{
-			"id": "6bf0af3e-d71d-4d9c-b7b5-3b82587172e4",
+			"id": "71f9fb28-5eaf-449e-afa1-49efc3584969",
 			"key": "saleId",
 			"value": ""
 		},
 		{
-			"id": "a0cfd258-0c0e-411f-85ab-2a60cf89e662",
+			"id": "d547d06a-295c-4210-a5c7-1ec76b341e4f",
 			"key": "saleReceiptNo",
 			"value": ""
 		},
 		{
-			"id": "da0a5be7-e7d2-4a0d-9577-56726fd350ba",
+			"id": "3fa74d42-916b-4dd0-ab51-b28404cc1acb",
 			"key": "salePosId",
 			"value": ""
 		},
 		{
-			"id": "e96b8e3a-35c0-4d57-ae9b-3316922d11a4",
+			"id": "5a174d94-c606-4ba1-95fd-4281dd56e965",
 			"key": "newQuantitySaleProduct",
 			"value": ""
 		},
 		{
-			"id": "0c807c51-8be3-4bff-9131-cc97977ea53e",
+			"id": "e49242f0-adf0-4e50-9ea6-0c02192c3637",
 			"key": "newSaleAmount",
 			"value": ""
 		},
 		{
-			"id": "e24c18cd-b744-4d6b-9eb0-a81f95765c7c",
+			"id": "3b6e7b9c-8471-4da8-b14c-7de1af96bd03",
 			"key": "saleCustomerId",
 			"value": ""
 		},
 		{
-			"id": "5f13e99a-0e79-4294-aa29-dde0f5e5471e",
+			"id": "afc27f52-c738-472b-94f5-9b9774ef3677",
 			"key": "refundProductBarcode",
 			"value": ""
 		},
 		{
-			"id": "2c3f4e01-e6f4-42f3-ba04-0f68a38534bb",
+			"id": "a5c3468b-399c-471c-b6ce-6513da0f226f",
 			"key": "sellingPriceRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "fa8d7240-5bd6-44e5-b585-73feb83ec0ff",
+			"id": "32ea9f19-4c24-4670-ac6e-43a3d9adef7d",
 			"key": "quantityRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "d8bef30c-affe-4fff-b23f-eccd21821e98",
+			"id": "6fd83d64-4555-412f-8d94-8895da542496",
 			"key": "amountRefund",
 			"value": ""
 		},
 		{
-			"id": "a1ce9571-5c56-47be-bd53-3af53da9f8ae",
+			"id": "ed36f991-0c04-418a-a840-3fc79f6fb6f4",
 			"key": "scorePaymentRefund",
 			"value": ""
 		},
 		{
-			"id": "13df22fa-ed72-4189-af79-e4e805a206b2",
+			"id": "670f4c43-6bad-4f8f-bfc8-b0cd24743ea1",
 			"key": "timestampNow",
 			"value": ""
 		},
 		{
-			"id": "df5f9fe2-3141-4bf0-b980-69fb302b3bf1",
+			"id": "97004fd4-a264-4cfa-8c17-4fb9f349c2d2",
 			"key": "refundId",
 			"value": ""
 		},
 		{
-			"id": "a8a17126-0693-41ec-bdc6-f79579c8fa4e",
+			"id": "2d2cde4a-6b8d-4e59-8645-f3e87887c67f",
 			"key": "refundCashierId",
 			"value": ""
 		},
 		{
-			"id": "fd346c4a-fa78-4612-8fc1-8b45cb343604",
+			"id": "69ad969b-9858-43ff-8100-e78a537ab85a",
 			"key": "refundPosId",
 			"value": ""
 		},
 		{
-			"id": "1f58bb2c-ef9b-40f9-b7d6-6ae12aa0b4f2",
+			"id": "46a3dace-f5af-4a90-9b4a-cec25f0151cd",
 			"key": "newQuantityRefundProduct",
 			"value": ""
 		},
 		{
-			"id": "fc454792-71bb-41a0-aac1-8bb53815e2c5",
+			"id": "6411f3e0-f3a1-48e2-80f4-13f89beaace7",
 			"key": "newAmountRefund",
 			"value": ""
 		},
 		{
-			"id": "8c534e9e-8e60-47a8-b7be-0ec94bde9bc6",
+			"id": "bc391a35-08d1-48fe-8a05-455151712606",
 			"key": "refundSaleId",
 			"value": ""
 		}
