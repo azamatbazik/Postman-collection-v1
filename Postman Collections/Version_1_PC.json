@@ -3090,6 +3090,16 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "854820d2-96bc-444a-af6a-bd7e28a753fa",
+								"exec": [
+									"pm.collectionVariables.set(\"type\", 0);"
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"id": "7d876dea-08db-44a9-9d87-de2f522aca75",
