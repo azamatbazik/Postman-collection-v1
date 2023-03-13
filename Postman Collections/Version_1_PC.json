@@ -4281,33 +4281,88 @@
 	],
 	"variable": [
 		{
-			"id": "e3ff63eb-3e85-4b06-a438-534ee8eefb86",
+			"id": "3bf1a555-20d7-4ea4-a962-f24d0a4b5791",
 			"key": "type",
 			"value": ""
 		},
 		{
-			"id": "8c4f8dbd-b87a-4830-9da2-3aaee00b2e60",
+			"id": "8cd00c4c-fd2e-4862-a339-b1ec59a912f1",
 			"key": "barcode",
 			"value": ""
 		},
 		{
-			"id": "8af2e4d6-05e1-4cb2-8aeb-380bab9720b3",
+			"id": "41e11d73-64b1-4e2e-aeb8-f07586238039",
 			"key": "posId",
 			"value": ""
 		},
 		{
-			"id": "dd385cae-c7e8-4fd3-a12d-51dd96b722a8",
+			"id": "5c0c1b75-f2bd-48c6-8f54-2d559575bc83",
 			"key": "currentDate",
 			"value": ""
 		},
 		{
-			"id": "e275ef67-fc85-40df-8c59-bcf012773746",
+			"id": "e5fb6385-c53f-4208-aa19-a46f639cf94c",
 			"key": "dateMonthAgo",
 			"value": ""
 		},
 		{
-			"id": "ab0eaf1e-1358-4e42-a50d-90900958e865",
+			"id": "26996a05-c46f-46b3-9573-52685ac49e1d",
 			"key": "userId",
+			"value": ""
+		},
+		{
+			"id": "cf778c66-2000-44cc-b2bd-3b67831ba07d",
+			"key": "saleProductBarcode",
+			"value": ""
+		},
+		{
+			"id": "68333966-2575-4538-ab31-e138c3587789",
+			"key": "sellingPriceSaleProduct",
+			"value": ""
+		},
+		{
+			"id": "9aa57d74-e6e7-4c89-9c68-3a1e649071f4",
+			"key": "quantitySaleProduct",
+			"value": ""
+		},
+		{
+			"id": "33e4d0cf-ecab-4344-b7e2-60b8da51d18d",
+			"key": "amountSale",
+			"value": ""
+		},
+		{
+			"id": "76d0d672-02aa-4cfa-a28c-ae15eb1032a1",
+			"key": "scorePaymentSale",
+			"value": ""
+		},
+		{
+			"id": "3759c097-aa6b-4e90-9612-454c51eeaa3f",
+			"key": "isoTimestampNow",
+			"value": ""
+		},
+		{
+			"id": "ae8e024f-4530-4beb-b2dc-e6945c68ef3d",
+			"key": "saleId",
+			"value": ""
+		},
+		{
+			"id": "2d76f7b3-731c-4dc2-b998-0172fdf03d01",
+			"key": "saleReceiptNo",
+			"value": ""
+		},
+		{
+			"id": "8097aa31-2d2a-4923-a300-a832b1278d23",
+			"key": "salePosId",
+			"value": ""
+		},
+		{
+			"id": "38a4d33f-56ed-484f-8090-2d4fb263a216",
+			"key": "newQuantitySaleProduct",
+			"value": ""
+		},
+		{
+			"id": "3286ffb5-b493-4b58-a896-8658c9bcc8b3",
+			"key": "newSaleAmount",
 			"value": ""
 		}
 	]
