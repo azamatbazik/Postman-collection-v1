@@ -4289,5 +4289,107 @@
 				]
 			}
 		}
+	],
+	"variable": [
+		{
+			"id": "a2b2992c-2d81-41be-b9a6-62a77fc266f8",
+			"key": "type",
+			"value": ""
+		},
+		{
+			"id": "0d73e3ba-adc9-427d-876e-34a537b7011c",
+			"key": "allBarcode",
+			"value": ""
+		},
+		{
+			"id": "2969ef22-8cc1-48db-94fc-48ffb6c270f9",
+			"key": "supplyPaymetnScoreId",
+			"value": ""
+		},
+		{
+			"id": "190ebcea-b7a8-4d6a-a434-6ce74ab5c2b0",
+			"key": "supplierId",
+			"value": ""
+		},
+		{
+			"id": "e447108c-96d1-47ff-ba6f-50d93bc62005",
+			"key": "dataOfProduct",
+			"value": ""
+		},
+		{
+			"id": "9b1132ce-98ee-4888-8a52-4ae82c65436a",
+			"key": "stockQuantity",
+			"value": ""
+		},
+		{
+			"id": "a467b0dc-d564-4618-a26b-492b279532c2",
+			"key": "dataOfCategory",
+			"value": ""
+		},
+		{
+			"id": "41256f10-ad2e-43e4-a2eb-16a014c04a33",
+			"key": "\"dataOfSubCategory\"",
+			"value": ""
+		},
+		{
+			"id": "091e930d-b5e8-43ca-a5f2-b6ec2aca6b21",
+			"key": "supplyProductId",
+			"value": ""
+		},
+		{
+			"id": "bc9d699d-1a61-4fa6-8c2e-162dffe05aff",
+			"key": "supplyArrivalCostProductPrise",
+			"value": ""
+		},
+		{
+			"id": "785aadf0-26e1-4b77-a3e1-08b8cbe0db5d",
+			"key": "supplySellingPriceProductPrise",
+			"value": ""
+		},
+		{
+			"id": "fb0ea544-de54-4758-bb49-7e8e70103416",
+			"key": "supplyWholesalePriceProductPrice",
+			"value": ""
+		},
+		{
+			"id": "73de9079-047c-4753-99f2-16a280941ffa",
+			"key": "percentMarkup",
+			"value": ""
+		},
+		{
+			"id": "80d7caea-348f-4766-acb5-e72de71c9c95",
+			"key": "quantityProduct",
+			"value": ""
+		},
+		{
+			"id": "2e9010fc-227d-4036-974a-5d53fabf19fb",
+			"key": "supplyAmount",
+			"value": ""
+		},
+		{
+			"id": "8571e66c-83ee-4169-a849-cd8abd4b3edb",
+			"key": "newQuantityProduct",
+			"value": ""
+		},
+		{
+			"id": "4dd6f59d-dcba-4e2a-8470-07a350e56b53",
+			"key": "newSupplyAmount",
+			"value": ""
+		},
+		{
+			"id": "3b187b6b-5efe-4a29-a2eb-062baa482366",
+			"key": "newSupplyArrivalCostProduct",
+			"value": ""
+		},
+		{
+			"id": "6e274b2f-24c1-4a8d-b61c-05f9cce0eeda",
+			"key": "newSupplySellingPriceProduct",
+			"value": ""
+		},
+		{
+			"id": "9c03aabd-d06b-4c0e-82f2-49bbb86f836d",
+			"key": "isoTimestampNow",
+			"value": ""
+		}
 	]
 }
