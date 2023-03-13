@@ -3425,7 +3425,7 @@
 									"pm.collectionVariables.set(\"paymentCons\", pm.response.json().time);\r",
 									"\r",
 									"pm.collectionVariables.set(\"PaymentConsAmount\", pm.response.json().amount);\r",
-									"setTimeout(function(){}, 5000);"
+									"setTimeout(function(){}, 7000);"
 								],
 								"type": "text/javascript"
 							}
